@@ -1,5 +1,5 @@
-enter ~/Documents/(github|12)/([^/]+)
+enter ~/Documents/(github|golang|12)/([^/]+)
   [[ -s $HOME/prospect/ondir/ondirrc.sh ]] && . $HOME/prospect/ondir/ondirrc.sh # ondir
 
-leave ~/Documents/(github|12)/([^/]+)
+leave ~/Documents/(github|golang|12)/([^/]+)
   export GOPATH=$HOME/Documents/golang
