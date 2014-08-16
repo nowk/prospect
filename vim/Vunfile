@@ -1,0 +1,98 @@
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+
+" Theme
+"
+Bundle 'molokai'
+Bundle 'croaky/vim-colors-github'
+
+" Required utilities 
+"
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'airblade/vim-rooter'
+Bundle 'godlygeek/tabular'
+Bundle 'Raimondi/delimitMate'
+Bundle 'ervandew/supertab'
+
+" status bar
+"
+Bundle 'bling/vim-airline'
+
+" not sure what this does, but it's pretty cool
+"
+Bundle 'Lokaltog/vim-easymotion'
+
+" code
+"
+Bundle 'majutsushi/tagbar'
+
+" search
+"
+" requires ag `brew install ag`
+Bundle 'rking/ag.vim' 
+
+" markdown
+"
+Bundle 'henrik/vim-markdown-preview'
+
+" GO
+"
+Bundle 'fatih/vim-go'
+
+" Javascript
+"
+Bundle 'moll/vim-node'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'mklabs/grunt.vim'
+" Bundle 'jelera/vim-javascript-syntax'
+
+" Ruby
+"
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rake'
+Bundle 'nowk/vim-rubytest'
+
+" HTML/CSS
+"
+Bundle 'mattn/emmet-vim'
+Bundle 'groenewege/vim-less'
+
+" Syntax
+"
+Bundle 'scrooloose/syntastic'
+
+" neocomplete
+"
+Bundle 'Shougo/neocomplete.vim'
+Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/neosnippet-snippets'
+
+" Git
+"
+" Bundle 'mattn/gist-vim'
+" Bundle 'mattn/webapi-vim'
+
+" Tpope
+"
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-dispatch'
+
+" Bundle 'tpope/vim-ragtag'
+" Bundle 'tpope/vim-abolish'
+" Bundle 'tpope/vim-haml'
+" Bundle 'tpope/vim-speeddating'
+" Bundle 'tpope/vim-markdown'
+
+" multi-cursor editing
+"
+" Bundle 'paradigm/vim-multicursor'
+" Bundle 'hlissner/vim-multiedit'

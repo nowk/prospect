@@ -1,0 +1,322 @@
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+filetype plugin indent on " required!
+syntax on                 " required!
+
+" ,V reloads it -- making all changes active (have to save first)
+map <silent> ,V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+
+if has("autocmd")
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+endif
+
+
+" LEADER
+"
+let mapleader = "\\"
+
+set t_Co=256
+set term=screen-256color
+set lazyredraw
+set backspace=indent,eol,start " allow backspacing over everything in insert mode
+set nobackup
+set nowritebackup
+set history=1000               " keep 1000 lines of command line history
+set ruler                      " show the cursor position all the time
+set showcmd                    " display incomplete commands
+set incsearch                  " do incremental searching
+set clipboard=unnamed          " yank to system clipboard
+" set spell
+" set spellsuggest=3
+set hidden
+
+
+" disable arrow keys, HAM
+"
+map <Left>  <Nop>
+map <Right> <Nop>
+map <Up>    <Nop>
+map <Down>  <Nop>
+
+" mouse
+"
+set mouse=a
+set ttymouse=xterm2
+" set selectmode=mouse
+
+" Softtabs, 2 spaces
+"
+set ts=2 sts=2 sw=2 expandtab
+set autoindent
+set smarttab
+set smartindent
+
+" code folding     http://smartic.us/2009/04/06/code-folding-in-vim/
+"
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
+
+" balloons
+" not going to work within terminal
+"
+" set ballooneval 
+
+" style
+"
+set list!
+" set listchars=tab:\|\ ,nbsp:=
+" set listchars=tab:·\ 
+" set listchars=tab:\ \ 
+set listchars=tab:»·,trail:·
+set linespace=2
+set guioptions-=L
+set guioptions-=r
+set guioptions-=T
+set guifont=Courier:h12
+
+colorscheme github
+set background=light
+hi cursorline ctermbg=255
+hi Comment ctermfg=251 cterm=BOLD
+hi NonText ctermbg=15 ctermfg=254
+hi SpecialKey ctermbg=15 ctermfg=254
+hi ExtraWhitespace ctermbg=196
+match ExtraWhitespace /\s\+$/
+
+
+set nocursorcolumn
+set nocursorline
+set hlsearch
+set number
+
+"---
+"
+map <leader>h :set invhls <CR>
+nnoremap <C-L> :nohls<CR><C-L>
+inoremap <C-L> <C-O>:nohls<CR>
+
+" statusline, via vim-airline
+"
+if filereadable(expand('~/.vim/vimrc.statusline'))
+  source ~/.vim/vimrc.statusline
+endif
+
+" Press Shift+P while in visual mode to replace the selection without overwriting the default register
+vmap P p :call setreg('"', getreg('0')) <CR>
+
+" e shortcuts
+"
+map ,e   :e       <C-R>=escape(expand("%:p:h") . "/", '\ ') <CR>
+map ,et  :tabe    <C-R>=escape(expand("%:p:h") . "/", '\ ') <CR>
+map ,es  :split   <C-R>=escape(expand("%:p:h") . "/", '\ ') <CR>
+map ,ev  :vsplit  <C-R>=escape(expand("%:p:h") . "/", '\ ') <CR>
+map ,mkd :!mkdir  <C-R>=escape(expand("%:p:h") . "/", '\ ') <CR>
+map ,mv  :!mv     <C-R>=escape(expand("%"), '\ ')<CR> <C-R>=escape(expand("%:p:h") . "/", '\ ') <CR>
+map ,cp  :!cp     <C-R>=escape(expand("%"), '\ ')<CR> <C-R>=escape(expand("%:p:h") . "/", '\ ') <CR>
+map ,sa  :saveas  <C-R>=escape(expand("%:p:h") . "/", '\ ') <CR>
+
+" go
+"
+au FileType go set listchars=tab:\ \ 
+au FileType go nmap <leader>} <Plug>(go-test)
+au FileType go nmap <leader>] :Dispatch GO_ENV=test go test %<CR>
+au FileType go nmap ,r <Plug>(go-run)
+au FileType go nmap ,b <Plug>(go-build)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+
+
+" node
+"
+function! JsTest(framework, flag, tobuf)
+    let command = "NODE_ENV=test " . a:framework . " " . expand("%p") . " --reporter spec" . a:flag
+    if a:tobuf
+      let out = system(command)
+      " tabnew
+      botright new
+      put=out
+      set nomodified
+    else
+      " redir => out
+      execute "!echo '" . command . "' && " . command
+      " redir END
+    endif
+endfunction
+
+au FileType javascript nmap ,r :w !node<CR>
+au FileType javascript nmap ,rh :w !node --harmony<CR>
+au FileType javascript nmap <leader>] :Dispatch NODE_ENV=test mocha % --reporter spec<CR>
+au FileType javascript nmap <leader>]h :Dispatch NODE_ENV=test mocha % --harmony --reporter spec<CR>
+au FileType javascript nmap <leader>[ :call JsTest('mocha', '', 0)<CR>
+au FileType javascript nmap <leader>[h :call JsTest('mocha', ' --harmony', 0)<CR>
+
+
+"
+" ruby
+au FileType ruby nmap ,r :w !ruby<CR>
+
+
+" http://robots.thoughtbot.com/post/619330025/viiiiiiiiiiiiiiiiiim
+nnoremap <silent> <F5>  :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
+map <silent> <C-h> ^cw
+vmap D y'>p
+
+" define file type
+au BufNewFile,BufRead *.hamlc    set filetype=haml
+au BufNewFile,BufRead Vunfile    set filetype=vim
+au BufNewFile,BufRead *.md       set filetype=markdown
+au BufNewFile,BufRead *.markdown set filetype=markdown
+
+" Mappings to find TODOs and stuff
+"
+nnoremap ,td :noautocmd vimgrep /TODO/j **/*.js<CR>:cw<CR>
+nnoremap ,fm :noautocmd vimgrep /FIXME/j **/*.js<CR>:cw<CR>
+
+" MUST disable iterms CMD+r, it refreshes view and screws everything up afterwards
+"
+map <D-r> <Nop>
+
+
+" ------------------------------------------------------------------------- "
+" Plugin settings                                                              "
+" ------------------------------------------------------------------------- "
+
+
+" vim-go
+"
+let g:go_bin_path = expand("~/Documents/golang/bin")
+let g:go_snippet_engine = "neosnippet"
+
+
+" neocomplete
+"
+" set completeopt-=preview
+
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h>  neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS>   neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+
+" neosnippet
+"
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: pumvisible() ? "\<C-n>" : "\<TAB>"
+
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+
+
+" tagbar
+"
+nmap <silent> <leader>tb :TagbarToggle<CR>
+
+
+" NERDTree
+"
+nmap <silent> <leader>p :NERDTreeToggle<CR>
+nmap <silent> <leader>b :NERDTreeFromBookmark<CR>
+
+
+" Syntastic
+"
+let g:syntastic_enable_signs        = 1
+let g:syntastic_auto_loc_list       = 0
+let g:syntastic_loc_list_height     = 4
+let g:syntastic_enable_highlighting = 1
+" let g:syntastic_quiet_warnings      = 1
+" let g:syntastic_auto_jump           = 1
+" let g:syntastic_javascript_checker  = 'jshint' " npm install jshint -g
+" let g:syntastic_stl_format          = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+
+
+" vim-rubytest
+"
+let g:rubytest_in_quickfix       = 0
+let g:rubytest_cmd_spec          = "bundle exec rspec %p"
+let g:rubytest_cmd_spec_example  = "bundle exec rspec %p:'%c'"
+let g:rubytest_cmd_rspec         = "bundle exec rspec %p"
+let g:rubytest_cmd_rspec_example = "bundle exec rspec %p:'%c'"
+let g:rubytest_cmd_feature       = "bundle exec rspec %"
+let g:rubytest_cmd_story         = "bundle exec rspec % --example '%c'"
+map <leader>]r <Plug>RubyTestRun
+map <leader>}r <Plug>RubyFileRun
+map <leader>[r <Plug>RubyTestRunLast
+
+
+" ctrlp
+"
+let g:ctrlp_map                   = '<c-p>'
+let g:ctrlp_cmd                   = 'CtrlP'
+let g:ctrlp_working_path_mode     = 'ra'
+let g:ctrlp_regexp                = 1
+let g:ctrlp_open_new_file         = 'r'
+let g:ctrlp_max_height            = 15
+let g:ctrlp_match_window_reversed = 1
+let g:ctrlp_reuse_window          = 'netrw\|nerdtree'
+let g:ctrlp_switch_buffer         = 0
+let g:ctrlp_show_hidden           = 1
+set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip,*.git,*.css_cache,*.asset_cache     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+
+" easymotion
+" \\ is being used by comments
+"
+map // <Plug>(easymotion-prefix)
+
+map //l <Plug>(easymotion-lineforward)
+map //j <Plug>(easymotion-j)
+map //k <Plug>(easymotion-k)
+map //h <Plug>(easymotion-linebackward)
+
+" characters search
+map / <Plug>(easymotion-sn)
+map / <Plug>(easymotion-tn)
+" page forward and back in character search, like ctrl+g
+map n <Plug>(easymotion-next)
+map N <Plug>(easymotion-prev)
+
+
+" commentary
+"
+autocmd FileType go set commentstring=//\ %s

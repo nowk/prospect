@@ -1,0 +1,7 @@
+
+vim/bundle
+snippets/*
+vim/colors/*
+
+bashrc.env
+bashrc.rds
