@@ -1,13 +1,9 @@
 # load vms
-[[ -s $HOME/.rvm/scripts/rvm ]]  && . $HOME/.rvm/scripts/rvm  # rvm
-[[ -s $HOME/.nvm/nvm.sh ]]       && . $HOME/.nvm/nvm.sh       # nvm
+[[ -s $HOME/.nvm/nvm.sh ]]              && . $HOME/.nvm/nvm.sh       # nvm
 [[ -s $HOME/prospect/ondir/ondir.zsh ]] && . $HOME/prospect/ondir/ondir.zsh # ondir
 
 # relaod for tmux
 # if [ -n "$TMUX" ]; then
 #   [[ -s $HOME/prospect/ondir/ondirrc.zsh ]] && . $HOME/prospect/ondir/ondirrc.zsh # ondir
 # fi
-
-# Add RVM to PATH for scripting
-export PATH=$PATH:$HOME/.rvm/bin
 
