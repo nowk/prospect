@@ -247,7 +247,7 @@ endif
 
 " tagbar
 "
-nmap <silent> <leader>tb :TagbarToggle<CR>
+" nmap <silent> <leader>tb :TagbarToggle<CR>
 
 
 " NERDTree
