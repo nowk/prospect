@@ -30,7 +30,7 @@ Bundle 'Lokaltog/vim-easymotion'
 
 " code
 "
-" Bundle 'majutsushi/tagbar'
+Bundle 'majutsushi/tagbar'
 
 " search
 "
@@ -39,7 +39,7 @@ Bundle 'rking/ag.vim'
 
 " markdown
 "
-" Bundle 'henrik/vim-markdown-preview'
+Bundle 'henrik/vim-markdown-preview'
 
 " GO
 "
