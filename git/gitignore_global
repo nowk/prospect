@@ -60,3 +60,6 @@ node_modules/*
 
 tmp/*
 .ondirrc
+
+*.sublime-project
+
