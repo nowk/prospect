@@ -5,8 +5,9 @@
 
 " Theme
 "
-Bundle 'molokai'
-Bundle 'croaky/vim-colors-github'
+" Bundle 'croaky/vim-colors-github'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'nowk/genericdc'
 
 " Required utilities 
 "
@@ -16,6 +17,8 @@ Bundle 'airblade/vim-rooter'
 Bundle 'godlygeek/tabular'
 Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
+
+Bundle 'kristijanhusak/vim-multiple-cursors'
 
 " status bar
 "
@@ -27,7 +30,7 @@ Bundle 'Lokaltog/vim-easymotion'
 
 " code
 "
-Bundle 'majutsushi/tagbar'
+" Bundle 'majutsushi/tagbar'
 
 " search
 "
@@ -36,18 +39,21 @@ Bundle 'rking/ag.vim'
 
 " markdown
 "
-Bundle 'henrik/vim-markdown-preview'
+" Bundle 'henrik/vim-markdown-preview'
 
 " GO
 "
 Bundle 'fatih/vim-go'
+Bundle 'nowk/vimux-golang'
+" Required by vimux-golang
+Bundle 'benmills/vimux'
 
 " Javascript
 "
-Bundle 'moll/vim-node'
+" Bundle 'moll/vim-node'
 Bundle 'digitaltoad/vim-jade'
-Bundle 'mklabs/grunt.vim'
-" Bundle 'jelera/vim-javascript-syntax'
+" Bundle 'mklabs/grunt.vim'
+Bundle 'jelera/vim-javascript-syntax'
 
 " Ruby
 "
@@ -68,18 +74,19 @@ Bundle 'scrooloose/syntastic'
 " neocomplete
 "
 Bundle 'Shougo/neocomplete.vim'
-Bundle 'Shougo/neosnippet'
-Bundle 'Shougo/neosnippet-snippets'
+" Bundle 'Shougo/neosnippet'
+" Bundle 'Shougo/neosnippet-snippets'
 
 " Git
 "
 " Bundle 'mattn/gist-vim'
 " Bundle 'mattn/webapi-vim'
+" Bundle 'airblade/vim-gitgutter'
 
 " Tpope
 "
 Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
+" Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
