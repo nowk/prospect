@@ -334,6 +334,8 @@ map N <Plug>(easymotion-prev)
 " commentary
 "
 autocmd FileType go set commentstring=//\ %s
+" xnoremap // <Plug>CommentaryLine
+
 " vim-multiple-cursors
 "
 " Called once right before you start selecting multiple cursors
