@@ -167,10 +167,10 @@ endfunction
 
 au FileType javascript nmap ,r :w !node<CR>
 au FileType javascript nmap ,rh :w !node --harmony<CR>
-au FileType javascript nmap <leader>] :Dispatch NODE_ENV=test mocha % --reporter spec<CR>
-au FileType javascript nmap <leader>]h :Dispatch NODE_ENV=test mocha % --harmony --reporter spec<CR>
-au FileType javascript nmap <leader>[ :call JsTest('mocha', '', 0)<CR>
-au FileType javascript nmap <leader>[h :call JsTest('mocha', ' --harmony', 0)<CR>
+" au FileType javascript nmap <leader>] :Dispatch NODE_ENV=test mocha % --reporter spec<CR>
+" au FileType javascript nmap <leader>]h :Dispatch NODE_ENV=test mocha % --harmony --reporter spec<CR>
+au FileType javascript nmap <leader>] :call JsTest('mocha', '', 0)<CR>
+au FileType javascript nmap <leader>} :call JsTest('mocha', ' --harmony', 0)<CR>
 
 
 "
