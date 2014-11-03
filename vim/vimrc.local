@@ -88,6 +88,11 @@ set guifont=Courier:h12
 " hi Comment ctermfg=240 ctermbg=235 cterm=NONE
 
 colorscheme genericdc
+let &colorcolumn="81,".join(range(120,999),",")
+" set textwidth=80
+" set colorcolumn=+1
+hi ColorColumn ctermbg=235
+
 " colorscheme hybrid
 
 " colorscheme github
@@ -146,7 +151,6 @@ au FileType go nmap ,b <Plug>(go-build)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-
 
 " node
 "
