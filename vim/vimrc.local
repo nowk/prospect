@@ -214,6 +214,12 @@ let g:go_bin_path = expand("~/Documents/golang/bin")
 let g:go_snippet_engine = "neosnippet"
 let g:go_fmt_command = "gofmt"
 let g:go_jump_to_error = 0
+" let g:go_fmt_fail_silently = 1
+
+let g:go_highlight_functions=1
+let g:go_highlight_methods=1
+let g:go_highlight_structs=1
+let g:go_highlight_operators=1
 
 
 " neocomplete
