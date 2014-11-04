@@ -228,6 +228,12 @@ let g:go_highlight_operators=1
 " tagbar
 "
 " nmap <silent> <leader>tb :TagbarToggle<CR>
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_autoclose=1
+let g:tagbar_autofocus=1
+let g:tagbar_autoshowtag=1
+let g:tagbar_left=1
+let g:tagbar_width=30
 
 
 " NERDTree
