@@ -19,8 +19,6 @@ Bundle 'Raimondi/delimitMate'
 " Bundle 'ervandew/supertab'
 Bundle 'Valloric/YouCompleteMe'
 
-Bundle 'kristijanhusak/vim-multiple-cursors'
-
 " status bar
 "
 Bundle 'bling/vim-airline'
@@ -102,5 +100,8 @@ Bundle 'tpope/vim-dispatch'
 
 " multi-cursor editing
 "
-" Bundle 'paradigm/vim-multicursor'
-" Bundle 'hlissner/vim-multiedit'
+Bundle 'kristijanhusak/vim-multiple-cursors'
+
+" misc
+"
+Bundle "wakatime/vim-wakatime"
