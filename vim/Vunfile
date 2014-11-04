@@ -17,6 +17,7 @@ Bundle 'airblade/vim-rooter'
 Bundle 'godlygeek/tabular'
 Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
+Bundle 'Valloric/YouCompleteMe'
 
 Bundle 'kristijanhusak/vim-multiple-cursors'
 
@@ -73,7 +74,7 @@ Bundle 'scrooloose/syntastic'
 
 " neocomplete
 "
-Bundle 'Shougo/neocomplete.vim'
+" Bundle 'Shougo/neocomplete.vim'
 " Bundle 'Shougo/neosnippet'
 " Bundle 'Shougo/neosnippet-snippets'
 
