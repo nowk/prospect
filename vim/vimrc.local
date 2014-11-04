@@ -148,6 +148,10 @@ map <Leader>} :wa<CR> :GolangTestCurrentPackage<CR>
 map <Leader>] :wa<CR> :GolangTestFocused<CR>
 au FileType go nmap ,r <Plug>(go-run)
 au FileType go nmap ,b <Plug>(go-build)
+au FileType go nmap <Leader>r <Plug>(go-run)
+au FileType go nmap <Leader>b <Plug>(go-build)
+au FileType go nmap <Leader>t <Plug>(go-test)
+au FileType go nmap <Leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
@@ -211,7 +215,6 @@ map <D-r> <Nop>
 " vim-go
 "
 let g:go_bin_path = expand("~/Documents/golang/bin")
-" let g:go_snippet_engine = "neosnippet"
 let g:go_fmt_command = "gofmt"
 let g:go_jump_to_error = 0
 " let g:go_fmt_fail_silently = 1
