@@ -38,7 +38,8 @@ Bundle 'rking/ag.vim'
 
 " markdown
 "
-Bundle 'henrik/vim-markdown-preview'
+" FIXME can't use till :ruby -v gets fixed
+" Bundle 'henrik/vim-markdown-preview'
 
 " GO
 "
@@ -53,13 +54,6 @@ Bundle 'benmills/vimux'
 Bundle 'digitaltoad/vim-jade'
 " Bundle 'mklabs/grunt.vim'
 Bundle 'jelera/vim-javascript-syntax'
-
-" Ruby
-"
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-rake'
-Bundle 'nowk/vim-rubytest'
 
 " HTML/CSS
 "
