@@ -75,9 +75,11 @@ set foldlevel=1
 "
 set list!
 set listchars=tab:»·,trail:·
+set linespace=3
 
 colorscheme genericdc
 let &colorcolumn="81,".join(range(120,999),",")
+hi ColorColumn ctermbg=236
 
 " cursor style
 " let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -89,6 +91,10 @@ set nocursorcolumn
 set nocursorline
 set hlsearch
 set number
+
+" cursorline (just the number column, set in colors)
+hi clear cursorline
+set cursorline
 
 "---
 "
