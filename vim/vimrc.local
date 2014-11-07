@@ -96,11 +96,6 @@ map <leader>h :set invhls <CR>
 nnoremap <C-L> :nohls<CR><C-L>
 inoremap <C-L> <C-O>:nohls<CR>
 
-" statusline, via vim-airline
-"
-if filereadable(expand('~/.vim/vimrc.statusline'))
-  source ~/.vim/vimrc.statusline
-endif
 
 " Press Shift+P while in visual mode to replace the selection without overwriting the default register
 vmap P p :call setreg('"', getreg('0')) <CR>
@@ -276,3 +271,10 @@ set completeopt+=preview
 let g:ycm_add_preview_to_completeopt=1
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_autoclose_preview_window_after_insertion=1
+
+
+" airline and tmuxline
+"
+set laststatus=2
+let g:tmuxline_theme = 'tmux'
+let g:airline#extensions#tabline#enabled = 1
