@@ -74,35 +74,10 @@ set foldlevel=1
 " style
 "
 set list!
-" set listchars=tab:\|\ ,nbsp:=
-" set listchars=tab:·\ 
-" set listchars=tab:\ \ 
 set listchars=tab:»·,trail:·
-set linespace=2
-set guioptions-=L
-set guioptions-=r
-set guioptions-=T
-set guifont=Courier:h12
-
-" colorscheme gruvbox
-" hi Comment ctermfg=240 ctermbg=235 cterm=NONE
 
 colorscheme genericdc
 let &colorcolumn="81,".join(range(120,999),",")
-" set textwidth=80
-" set colorcolumn=+1
-hi ColorColumn ctermbg=235
-
-" colorscheme hybrid
-
-" colorscheme github
-" set background=light
-" hi cursorline ctermbg=255
-" hi Comment ctermfg=251 cterm=NONE
-" hi NonText ctermbg=15 ctermfg=254
-" hi SpecialKey ctermbg=15 ctermfg=254
-" hi ExtraWhitespace ctermbg=196
-" match ExtraWhitespace /\s\+$/
 
 " cursor style
 " let &t_SI = "\<Esc>]50;CursorShape=1\x7"
