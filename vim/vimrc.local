@@ -176,6 +176,9 @@ nnoremap ,fm :noautocmd vimgrep /FIXME/j **/*.js<CR>:cw<CR>
 "
 map <D-r> <Nop>
 
+" Vim escape lag
+" http://www.johnhawthorn.com/2012/09/vi-escape-delays/
+set timeoutlen=1000 ttimeoutlen=0
 
 " ------------------------------------------------------------------------- "
 " Plugin settings                                                              "
