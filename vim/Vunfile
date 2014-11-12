@@ -16,8 +16,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'airblade/vim-rooter'
 Bundle 'godlygeek/tabular'
 Bundle 'Raimondi/delimitMate'
-" Bundle 'ervandew/supertab'
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'ervandew/supertab'
 
 " status bar
 "
@@ -71,6 +70,9 @@ Bundle 'scrooloose/syntastic'
 " Bundle 'Shougo/neosnippet'
 " Bundle 'Shougo/neosnippet-snippets'
 
+" ycm
+Bundle 'Valloric/YouCompleteMe'
+
 " Git
 "
 " Bundle 'mattn/gist-vim'
@@ -79,7 +81,6 @@ Bundle 'scrooloose/syntastic'
 
 " Tpope
 "
-Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
@@ -99,6 +100,6 @@ Bundle 'kristijanhusak/vim-multiple-cursors'
 
 " misc
 "
-Bundle "wakatime/vim-wakatime"
+Bundle 'wakatime/vim-wakatime'
 Bundle 'edkolev/tmuxline.vim'
 Bundle 'osyo-manga/vim-over'
