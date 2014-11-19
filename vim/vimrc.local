@@ -78,7 +78,7 @@ set listchars=tab:»·,trail:·
 set linespace=3
 
 colorscheme genericdc
-let &colorcolumn="81,".join(range(120,999),",")
+let &colorcolumn="81"
 hi ColorColumn ctermbg=236
 
 " cursor style
