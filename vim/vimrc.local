@@ -276,6 +276,9 @@ let g:multi_cursor_quit_key='<Esc>'
 hi multiple_cursors_cursor ctermfg=253 ctermbg=198
 hi multiple_cursors_visual ctermfg=234 ctermbg=219
 
+" Fix for weird <C-c> issue
+" http://stackoverflow.com/questions/5030164/whats-the-difference-between-ctrlc-and-ctrl
+vmap <C-c> <Esc>
 
 
 " airline and tmuxline
