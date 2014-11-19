@@ -276,13 +276,6 @@ let g:multi_cursor_quit_key='<Esc>'
 hi multiple_cursors_cursor ctermfg=253 ctermbg=198
 hi multiple_cursors_visual ctermfg=234 ctermbg=219
 
-" YouCompleteMe
-"
-" set completeopt-=preview
-" let g:loaded_youcompleteme = 0
-let g:ycm_add_preview_to_completeopt=1
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_autoclose_preview_window_after_insertion=1
 
 
 " airline and tmuxline

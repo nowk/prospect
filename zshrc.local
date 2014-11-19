@@ -1,6 +1,8 @@
 # for tmux ondirrc
 # cd ..;1
 
+source ~/.nvm/nvm.sh
+
 if [ -n "$TMUX" ]; then
   cd ..;1
   [[ -s $HOME/prospect/ondir/ondirrc.zsh ]] && . $HOME/prospect/ondir/ondirrc.zsh # ondir
