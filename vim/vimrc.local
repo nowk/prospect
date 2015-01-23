@@ -212,6 +212,11 @@ let g:tagbar_width=30
 "
 nmap <silent> <leader>p :NERDTreeToggle<CR>
 nmap <silent> <leader>b :NERDTreeFromBookmark<CR>
+let NERDTreeIgnore = [
+      \ "*.*.orig",
+      \ ".DS_Store",
+      \ ".*.*sw[a-z]*"
+      \]
 
 
 " Syntastic
@@ -240,6 +245,7 @@ let g:ctrlp_switch_buffer         = 0
 let g:ctrlp_show_hidden           = 1
 set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip,*.git,*.css_cache,*.asset_cache     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+set wildignore+=*.*.orig,.DS_Store
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 
