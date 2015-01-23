@@ -6,7 +6,7 @@
 " Theme
 "
 " Bundle 'croaky/vim-colors-github'
-Bundle 'flazz/vim-colorschemes'
+" Bundle 'flazz/vim-colorschemes'
 Bundle 'nowk/genericdc'
 
 " Required utilities 
