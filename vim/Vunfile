@@ -47,6 +47,8 @@ Bundle 'rhysd/vim-go-impl'
 "
 Bundle 'digitaltoad/vim-jade'
 Bundle 'jelera/vim-javascript-syntax'
+" NOTE run `npm install` inside bundle directory
+Bundle 'marijnh/tern_for_vim'
 
 " HTML/CSS
 "
