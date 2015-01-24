@@ -133,8 +133,8 @@ au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 
 " node
 "
-function! JsTest(framework, flag, tobuf)
-    let command = "NODE_ENV=test " . a:framework . " " . expand("%p") . " --reporter spec" . a:flag
+function! RunMocha(flag, tobuf)
+    let command = "NODE_ENV=test mocha " . expand("%p") . " --reporter spec" . a:flag
     if a:tobuf
       let out = system(command)
       " tabnew
@@ -148,12 +148,10 @@ function! JsTest(framework, flag, tobuf)
     endif
 endfunction
 
-au FileType javascript nmap ,r :w !node<CR>
-au FileType javascript nmap ,rh :w !node --harmony<CR>
-" au FileType javascript nmap <leader>] :Dispatch NODE_ENV=test mocha % --reporter spec<CR>
-" au FileType javascript nmap <leader>]h :Dispatch NODE_ENV=test mocha % --harmony --reporter spec<CR>
-au FileType javascript nmap <leader>] :call JsTest('mocha', '', 0)<CR>
-au FileType javascript nmap <leader>} :call JsTest('mocha', ' --harmony', 0)<CR>
+command NodeRun  :w !node
+command NodeRunh :w !node --harmony
+command Mocha    :call RunMocha('', 0)
+command Mochah   :call RunMocha(' --harmony', 0)
 
 
 " http://robots.thoughtbot.com/post/619330025/viiiiiiiiiiiiiiiiiim
