@@ -305,5 +305,7 @@ let g:ycm_filetype_blacklist = {
   \ 'pandoc' : 1,
   \ 'infolog' : 1,
   \ 'mail' : 1,
+  \ 'rb' : 1,
+  \ 'ruby' : 1,
   \}
 
