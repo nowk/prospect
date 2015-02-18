@@ -14,7 +14,7 @@
   ui = auto
 [core]
   excludesfile = /Users/yunghwakwon/.gitignore_global
-  editor = /usr/bin/vim
+  editor = /usr/local/bin/vim
   whitespace = warn
   quotepath = false
 [help]
