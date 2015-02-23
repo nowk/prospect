@@ -69,6 +69,9 @@ Bundle 'scrooloose/syntastic'
 "
 Bundle 'Valloric/YouCompleteMe'
 
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
+
 " Tpope
 "
 Bundle 'tpope/vim-fugitive'
