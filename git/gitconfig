@@ -21,3 +21,12 @@
   autocorrect = 10
 [merge]
   summary = true
+[push]
+  default = tracking
+[rebase]
+  autosquash = true
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[http]
+	sslVerify = true
