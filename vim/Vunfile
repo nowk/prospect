@@ -42,6 +42,7 @@ Bundle 'nowk/vimux-golang'
 " Required by vimux-golang
 Bundle 'benmills/vimux'
 Bundle 'rhysd/vim-go-impl'
+Bundle 'cespare/vim-go-templates'
 
 " Javascript
 "
