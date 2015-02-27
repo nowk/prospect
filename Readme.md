@@ -4,13 +4,19 @@ More dots, more dots, more dots... ok, stop dots.
 
 ## Installation
 
-Required linking: (assuming installed in `~/prospect`)
+Required linking: (assuming installed in `~/.prospect`)
 
-    .gitconfig        -> ~/prospect/git/gitconfig
-    .gitignore_global -> ~/prospect/git/gitignore_global
-    .ondirrc          -> ~/prospect/ondir/ondirrc
-    .tmux.conf        -> ~/prospect/tmux.conf
-    .vim              -> ~/prospect/vim
-    .vimrc            -> ~/prospect/vim/vimrc
-    .zprofile         -> ~/prospect/zprofile
+    .gitconfig        -> ~/.prospect/git.config
+    .gitignore_global -> ~/.prospect/git.ignore
+
+    .ondir            -> ~/.prospect/ondir
+    .ondirrc          -> ~/.prospect/ondir/ondirrc
+
+    .tmux.conf        -> ~/.prospect/tmux
+
+    .vim              -> ~/.prospect/vim
+    .vimrc            -> ~/.prospect/vimrc
+
+    .zshrc            -> ~/.prospect/zshrc
+    .zshrc.local      -> ~/.prospect/zshrc.local
 
