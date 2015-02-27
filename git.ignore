@@ -54,7 +54,6 @@ capybara-*.html
 coverage/*
 iron.json
 
-database.yml
 sendgrid.yml
 node_modules/*
 

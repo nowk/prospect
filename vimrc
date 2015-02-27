@@ -4,12 +4,19 @@ set shell=bash
 set nocompatible " be iMproved
 filetype off     " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+" Vundle.vim
+"
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+
 if filereadable(expand('~/.vim/Vunfile'))
   source ~/.vim/Vunfile
 endif
+
+call vundle#end()
+
+" vimrc.local
+"
 if filereadable(expand('~/.vim/vimrc.local'))
   source ~/.vim/vimrc.local
 endif

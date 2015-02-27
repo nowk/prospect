@@ -33,7 +33,7 @@ set history=1000               " keep 1000 lines of command line history
 set ruler                      " show the cursor position all the time
 set showcmd                    " display incomplete commands
 set incsearch                  " do incremental searching
-set clipboard=unnamed          " yank to system clipboard
+set clipboard+=unnamed         " yank to system clipboard
 " set spell
 " set spellsuggest=3
 set hidden
@@ -270,6 +270,7 @@ autocmd FileType go set commentstring=//\ %s
 " xnoremap // <Plug>CommentaryLine
 
 " vim-multiple-cursors
+"
 " Default mapping
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
@@ -296,7 +297,7 @@ set completeopt-=preview
 " YouCompleteMe
 "
 " let g:loaded_youcompleteme=0
-let g:ycm_add_preview_to_completeopt=1
+let g:ycm_add_preview_to_completeopt=0
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_filetype_blacklist = {
@@ -341,3 +342,4 @@ function! g:UltiSnips_Complete()
 endfunction
 
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+
