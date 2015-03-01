@@ -115,43 +115,6 @@ map ,mv  :!mv     <C-R>=escape(expand("%"), '\ ')<CR> <C-R>=escape(expand("%:p:h
 map ,cp  :!cp     <C-R>=escape(expand("%"), '\ ')<CR> <C-R>=escape(expand("%:p:h") . "/", '\ ') <CR>
 map ,sa  :saveas  <C-R>=escape(expand("%:p:h") . "/", '\ ') <CR>
 
-" go
-"
-au FileType go set listchars=tab:·\ 
-map <Leader>} :wa<CR> :GolangTestCurrentPackage<CR>
-map <Leader>] :wa<CR> :GolangTestFocused<CR>
-au FileType go nmap ,r <Plug>(go-run)
-au FileType go nmap ,b <Plug>(go-build)
-au FileType go nmap <Leader>r <Plug>(go-run)
-au FileType go nmap <Leader>b <Plug>(go-build)
-au FileType go nmap <Leader>t <Plug>(go-test)
-au FileType go nmap <Leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-
-" node
-"
-function! RunMocha(flag, tobuf)
-    let command = "NODE_ENV=test mocha " . expand("%p") . " --reporter spec" . a:flag
-    if a:tobuf
-      let out = system(command)
-      " tabnew
-      botright new
-      put=out
-      set nomodified
-    else
-      " redir => out
-      execute "!echo '" . command . "' && " . command
-      " redir END
-    endif
-endfunction
-
-command NodeRun  :w !node
-command NodeRunh :w !node --harmony
-command Mocha    :call RunMocha('', 0)
-command Mochah   :call RunMocha(' --harmony', 0)
-
 
 " http://robots.thoughtbot.com/post/619330025/viiiiiiiiiiiiiiiiiim
 nnoremap <silent> <F5>  :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
@@ -180,6 +143,13 @@ set timeoutlen=1000 ttimeoutlen=0
 " Plugin settings                                                              "
 " ------------------------------------------------------------------------- "
 
+" FIXME Weird issue, which appeared after moving to Yosemite, that unsets my
+" clipboard and I can't past anything in or out of my current vim session.
+" Manually restarting vim or running the set clipboard command resolves the
+" issue till it happens again. Till I can find out exactly what is going on
+" little bit of sanity...
+autocmd BufWritePost * :set clipboard+=unnamed
+
 
 " vim-go
 "
@@ -187,11 +157,36 @@ let g:go_bin_path = expand("~/Documents/golang/bin")
 let g:go_fmt_command = "gofmt"
 let g:go_jump_to_error = 0
 " let g:go_fmt_fail_silently = 1
-
 let g:go_highlight_functions=1
 let g:go_highlight_methods=1
 let g:go_highlight_structs=1
 let g:go_highlight_operators=1
+
+au FileType go set listchars=tab:·\ 
+au FileType go nmap ,r <Plug>(go-run)
+au FileType go nmap ,b <Plug>(go-build)
+au FileType go nmap <Leader>r <Plug>(go-run)
+au FileType go nmap <Leader>b <Plug>(go-build)
+au FileType go nmap <Leader>t <Plug>(go-test)
+au FileType go nmap <Leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+" NOTE d_ have conflicts with something
+" au FileType go nmap <Leader>ds <Plug>(go-def-split)
+" au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+" au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+" vimux-golang
+"
+command GoTestp :call GolangTestCurrentPackage()
+command GoTestl :call GolangTestFocused()
+
+" vim-go-templates
+"
+au BufRead,BufNewFile *.tmpl set filetype=gotplhtml.html
+let g:gotpl_deliml="<%"
+let g:gotpl_delimr="%>"
 
 
 " tagbar
@@ -343,3 +338,25 @@ endfunction
 
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
+
+" node, aka dead.js
+"
+function! RunMocha(flag, tobuf)
+    let command = "NODE_ENV=test mocha " . expand("%p") . " --reporter spec" . a:flag
+    if a:tobuf
+      let out = system(command)
+      " tabnew
+      botright new
+      put=out
+      set nomodified
+    else
+      " redir => out
+      execute "!echo '" . command . "' && " . command
+      " redir END
+    endif
+endfunction
+
+command NodeRun  :w !node
+command NodeRunh :w !node --harmony
+command Mocha    :call RunMocha('', 0)
+command Mochah   :call RunMocha(' --harmony', 0)
