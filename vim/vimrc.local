@@ -153,7 +153,7 @@ autocmd BufWritePost * :set clipboard+=unnamed
 
 " vim-go
 "
-let g:go_bin_path = expand("~/Documents/golang/bin")
+" let g:go_bin_path = expand("~/golang/bin")
 let g:go_fmt_command = "gofmt"
 let g:go_jump_to_error = 0
 " let g:go_fmt_fail_silently = 1
