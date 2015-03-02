@@ -180,7 +180,7 @@ au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 " vimux-golang
 "
 command GoTestp :call GolangTestCurrentPackage()
-command GoTestl :call GolangTestFocused()
+command GoTestf :call GolangTestFocused()
 
 " vim-go-templates
 "
