@@ -92,7 +92,9 @@ set re=1
 
 " cursorline (just the number column, set in colors)
 hi clear cursorline
-set cursorline
+hi CursorLine cterm=NONE,underline
+au VimEnter,WinEnter,BufWinEnter,InsertLeave * setlocal cursorline
+au WinLeave,InsertEnter * setlocal nocursorline
 
 "---
 "
