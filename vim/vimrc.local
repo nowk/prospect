@@ -141,6 +141,14 @@ map <D-r> <Nop>
 " http://www.johnhawthorn.com/2012/09/vi-escape-delays/
 set timeoutlen=1000 ttimeoutlen=0
 
+
+" vimdiff
+"
+if &diff
+    colorscheme genericdc
+endif
+
+
 " ------------------------------------------------------------------------- "
 " Plugin settings                                                              "
 " ------------------------------------------------------------------------- "
