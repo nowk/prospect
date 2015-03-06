@@ -251,19 +251,19 @@ set wildignore+=*.*.orig,.DS_Store
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 
-" easymotion
-" \\ is being used by comments
+" easymotion, \\ is being used by comments
 "
-map /e <Plug>(easymotion-prefix)
+map //e <Plug>(easymotion-prefix)
 
+" hjkl search
 map //l <Plug>(easymotion-lineforward)
 map //j <Plug>(easymotion-j)
 map //k <Plug>(easymotion-k)
 map //h <Plug>(easymotion-linebackward)
 
 " characters search
-map /s <Plug>(easymotion-sn)
-map /s <Plug>(easymotion-tn)
+map //s <Plug>(easymotion-sn)
+
 " page forward and back in character search, like ctrl+g
 map n <Plug>(easymotion-next)
 map N <Plug>(easymotion-prev)
