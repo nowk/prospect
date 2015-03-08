@@ -18,5 +18,7 @@ EXPORTS_DIR=$HOME/.prospect/exports
 # relaod for tmux
 #
 if [ -n "$TMUX" ]; then
+  export TERM=screen-256color
+
   [[ -s $HOME/.ondir/ondirrc.zsh ]] && . $HOME/.ondir/ondirrc.zsh
 fi
