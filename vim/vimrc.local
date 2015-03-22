@@ -148,6 +148,8 @@ if &diff
     colorscheme genericdc
 endif
 
+" au FilterWritePre * if &diff | colorscheme genericdc | endif
+
 
 " ------------------------------------------------------------------------- "
 " Plugin settings                                                              "
