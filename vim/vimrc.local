@@ -365,7 +365,7 @@ au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:U
 " node, aka dead.js
 "
 function! RunMocha(flag, tobuf)
-    let command = "NODE_ENV=test mocha " . expand("%p") . " --reporter spec" . a:flag
+    let command = "NODE_ENV=test ./node_modules/mocha/bin/mocha " . expand("%p") . " --reporter spec" . a:flag
     if a:tobuf
       let out = system(command)
       " tabnew
