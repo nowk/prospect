@@ -29,3 +29,8 @@ export TERM=xterm-256color-italic
 if [ -n "$TMUX" ]; then
   [[ -s $HOME/.ondir/ondirrc.zsh ]] && . $HOME/.ondir/ondirrc.zsh
 fi
+
+
+# force utf8
+#
+alias tmux='tmux -u'
