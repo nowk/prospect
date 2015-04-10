@@ -5,7 +5,7 @@ set-option -g default-shell /usr/bin/zsh
 
 
 # set term
-set -g default-terminal "screen-256color-italic"
+set -g default-terminal xterm-256color-italic
 
 
 # utf-8
