@@ -89,9 +89,6 @@ bind C-y run "tmux save-buffer - | xclip -i"
 
 # viiiiiiiiiiiim
 setw -g mode-keys vi
-
-unbind [
-bind Escape copy-mode
 bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
@@ -101,8 +98,11 @@ bind-key -r C-l select-window -t :+
 
 
 # Vi copypaste mode
+unbind [
+bind Escape copy-mode
 unbind p
 bind p paste-buffer
 bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'V' rectangle-toggle
 bind-key -t vi-copy 'y' copy-selection
-
+bind-key -t vi-copy 'Y' copy-end-of-line
