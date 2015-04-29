@@ -81,20 +81,27 @@ bind X confirm kill-server
 
 
 # copy and paste to clipboard
-bind C-p run "tmux set-buffer \"$(xclip -o)\"; tmux paste-buffer"
-bind C-y run "tmux save-buffer - | xclip -i"
+# bind C-p run "tmux set-buffer \"$(xclip -o)\"; tmux paste-buffer"
+# bind C-y run "tmux save-buffer - | xclip -i"
+
+# run-shell ~/.prospect/tmux-yank/yank.tmux
 
 
 # ---
 
 # viiiiiiiiiiiim
 setw -g mode-keys vi
+set -g status-keys vi
 bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 bind-key -r C-h select-window -t :-
 bind-key -r C-l select-window -t :+
+
+# page up/down
+# bind-key -t vi-edit U history-up
+# bind-key -t vi-edit D history-down
 
 
 # Vi copypaste mode
