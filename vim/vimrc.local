@@ -33,7 +33,7 @@ set history=1000               " keep 1000 lines of command line history
 set ruler                      " show the cursor position all the time
 set showcmd                    " display incomplete commands
 set incsearch                  " do incremental searching
-set clipboard+=unnamed         " yank to system clipboard
+set clipboard=unnamedplus      " yank to system clipboard
 " set spell
 " set spellsuggest=3
 set hidden
@@ -96,6 +96,12 @@ hi CursorLine cterm=NONE,underline
 au VimEnter,WinEnter,BufWinEnter,InsertLeave * setlocal cursorline
 au WinLeave,InsertEnter * setlocal nocursorline
 
+" remap C-c or it does not trigger InsertLeave, etc...
+map <C-c> <C-[>
+map! <C-c> <C-[>
+vmap <C-c> <C-[>
+
+
 "---
 "
 map <leader>h :set invhls <CR>
@@ -145,7 +151,7 @@ set timeoutlen=1000 ttimeoutlen=0
 " vimdiff
 "
 if &diff
-    colorscheme genericdc
+    " colorscheme genericdc
 endif
 
 " au FilterWritePre * if &diff | colorscheme genericdc | endif
@@ -210,6 +216,8 @@ command GoTestfd :call GolangTestFocused()
 au BufRead,BufNewFile *.tmpl set filetype=gotplhtml.html
 let g:gotpl_deliml="<%"
 let g:gotpl_delimr="%>"
+
+" au FileType go setl tabstop=4 shiftwidth=4 softtabstop=4
 
 
 " tagbar
@@ -294,12 +302,10 @@ let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
+let g:multi_cursor_exit_from_insert_mode=0
+" let g:multi_cursor_exit_from_visual_mode=0
 hi multiple_cursors_cursor ctermfg=253 ctermbg=198
 hi multiple_cursors_visual ctermfg=234 ctermbg=219
-
-" Fix for weird <C-c> issue
-" http://stackoverflow.com/questions/5030164/whats-the-difference-between-ctrlc-and-ctrl
-vmap <C-c> <Esc>
 
 
 " airline and tmuxline
