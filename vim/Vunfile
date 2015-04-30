@@ -82,7 +82,6 @@ Plugin 'fatih/vim-go'
 Plugin 'nowk/vimux-golang'
 Plugin 'benmills/vimux' " Required by vimux-golang
 Plugin 'rhysd/vim-go-impl'
-Plugin 'nowk/vim-go-templates'
 
 " Javascript
 "
