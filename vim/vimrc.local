@@ -157,6 +157,19 @@ endif
 " au FilterWritePre * if &diff | colorscheme genericdc | endif
 
 
+" copy and paste without X. primarily across tmux sessions since I do not have
+" X
+" Some inspiration from
+" http://vim.wikia.com/wiki/In_line_copy_and_paste_to_system_clipboard
+if system("echo $DISPLAY") =~ ""
+  " copy selected (or last selected) to tmp
+  vmap <C-c> y:silent! '<,'>write! /tmp/no-x-clipboard<CR>
+
+  " read from tmp and set to reg, then paste
+  map <C-v> :call setreg("\"", readfile("/tmp/no-x-clipboard"))<CR>p
+endif
+
+
 " ------------------------------------------------------------------------- "
 " Plugin settings                                                              "
 " ------------------------------------------------------------------------- "
