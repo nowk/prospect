@@ -215,8 +215,8 @@ au FileType go nmap <Leader>gi <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
-command! -nargs=* GoTestf call go#cmd#TestFunc(<f-args>)
 " command! -nargs=0 GoTestl call go#cmd#TestLast()
+command! -bang -nargs=* GoTestf call go#cmd#TestFunc(<bang>1, <f-args>)
 
 " vimux-golang
 "
