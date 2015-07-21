@@ -251,7 +251,8 @@ nmap <silent> <leader>b :NERDTreeFromBookmark<CR>
 let NERDTreeIgnore = [
       \ "*.*.orig",
       \ ".DS_Store",
-      \ ".*.*sw[a-z]*"
+      \ ".*.*sw[a-z]*",
+      \ "node_modules"
       \]
 
 
