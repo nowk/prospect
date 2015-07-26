@@ -170,6 +170,11 @@ if system("echo $DISPLAY") =~ ""
 endif
 
 
+" format json shortcut via pythong's json tool
+"
+command FormatJson :%!python -m json.tool
+
+
 " ------------------------------------------------------------------------- "
 " Plugin settings                                                              "
 " ------------------------------------------------------------------------- "
