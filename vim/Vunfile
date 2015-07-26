@@ -82,10 +82,16 @@ Plugin 'fatih/vim-go'
 Plugin 'rhysd/vim-go-impl'
 Plugin 'garyburd/go-explorer'
 
+
 " Javascript
 "
-Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript' " required by vim-jsx as well
 Plugin 'marijnh/tern_for_vim' " run `npm install` inside bundle directory
+Plugin 'mxw/vim-jsx'
+" npm install -g eslint
+" npm install -g babel-eslint
+" npm install -g eslint-plugin-react
+
 
 " HTML/CSS
 "
