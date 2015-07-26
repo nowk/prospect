@@ -228,6 +228,11 @@ let g:gotpl_delimr="%>"
 " au FileType go setl tabstop=4 shiftwidth=4 softtabstop=4
 
 
+" coreos.com/rocket
+"
+au BufRead,BufNewFile manifest set filetype=json
+
+
 " tagbar
 "
 " nmap <silent> <leader>tb :TagbarToggle<CR>
