@@ -98,3 +98,13 @@ Plugin 'mxw/vim-jsx'
 Plugin 'othree/html5.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'groenewege/vim-less'
+
+
+" web api
+"
+Plugin 'mattn/webapi-vim'
+
+
+" gist
+"
+Plugin 'mattn/gist-vim'
