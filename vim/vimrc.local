@@ -129,11 +129,6 @@ nnoremap <silent> <F5>  :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 map <silent> <C-h> ^cw
 vmap D y'>p
 
-" define file type
-au BufNewFile,BufRead Vunfile    set filetype=vim
-au BufNewFile,BufRead *.md       set filetype=markdown
-au BufNewFile,BufRead *.markdown set filetype=markdown
-
 " Mappings to find TODOs and stuff
 "
 nnoremap ,td :noautocmd vimgrep /TODO/j **/*.js<CR>:cw<CR>
@@ -173,6 +168,21 @@ endif
 " format json shortcut via pythong's json tool
 "
 command FormatJson :%!python -m json.tool
+
+
+" define file type
+"
+au BufNewFile,BufRead Vunfile    set filetype=vim
+au BufNewFile,BufRead *.md       set filetype=markdown
+au BufNewFile,BufRead *.markdown set filetype=markdown
+au BufNewFile,BufRead manifest   set filetype=json      " coreos.com/rocket
+
+
+" language tab settings
+"
+au BufNewFile,BufRead *.go       set tabstop=4 shiftwidth=4 softtabstop=4
+au BufNewFile,BufRead *.md       set tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.markdown set tabstop=2 shiftwidth=2 softtabstop=2
 
 
 " ------------------------------------------------------------------------- "
@@ -229,13 +239,6 @@ command! -bang -nargs=* GoTestf call go#cmd#TestFunc(<bang>1, <f-args>)
 au BufRead,BufNewFile *.tmpl set filetype=gotplhtml.html
 let g:gotpl_deliml="<%"
 let g:gotpl_delimr="%>"
-
-" au FileType go setl tabstop=4 shiftwidth=4 softtabstop=4
-
-
-" coreos.com/rocket
-"
-au BufRead,BufNewFile manifest set filetype=json
 
 
 " tagbar
