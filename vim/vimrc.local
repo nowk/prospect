@@ -186,7 +186,8 @@ au BufNewFile,BufRead *.markdown set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead manifest   set tabstop=4 shiftwidth=4 softtabstop=4
 au BufNewFile,BufRead Makefile   set tabstop=4 shiftwidth=4 softtabstop=4
 au BufNewFile,BufRead Dockerfile set tabstop=4 shiftwidth=4 softtabstop=4
-au BufNewFile,BufRead sh, *.sh   set tabstop=4 shiftwidth=4 softtabstop=4
+au BufNewFile,BufRead sh         set tabstop=4 shiftwidth=4 softtabstop=4
+au BufNewFile,BufRead *.sh      set tabstop=4 shiftwidth=4 softtabstop=4
 
 
 " ------------------------------------------------------------------------- "
