@@ -175,19 +175,20 @@ command FormatJson :%!python -m json.tool
 au BufNewFile,BufRead Vunfile    set filetype=vim
 au BufNewFile,BufRead *.md       set filetype=markdown
 au BufNewFile,BufRead *.markdown set filetype=markdown
+au BufNewFile,BufRead *.jsx      set filetype=jsx
 au BufNewFile,BufRead manifest   set filetype=json      " coreos.com/rocket
 
 
 " language tab settings
 "
-au BufNewFile,BufRead *.go       set tabstop=4 shiftwidth=4 softtabstop=4
-au BufNewFile,BufRead *.md       set tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.markdown set tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead manifest   set tabstop=4 shiftwidth=4 softtabstop=4
-au BufNewFile,BufRead Makefile   set tabstop=4 shiftwidth=4 softtabstop=4
-au BufNewFile,BufRead Dockerfile set tabstop=4 shiftwidth=4 softtabstop=4
-au BufNewFile,BufRead sh         set tabstop=4 shiftwidth=4 softtabstop=4
-au BufNewFile,BufRead *.sh      set tabstop=4 shiftwidth=4 softtabstop=4
+au Filetype go         setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+au Filetype md         setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au Filetype markdown   setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au Filetype manifest   setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+au Filetype Makefile   setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+au Filetype Dockerfile setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+au Filetype sh         setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+au Filetype json       setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 
 " ------------------------------------------------------------------------- "
