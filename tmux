@@ -67,8 +67,9 @@ bind C-a last-window
 # window management
 unbind '"'
 unbind %
-bind | split-window -h # -c '#{pane_current_path}' # these don't work on nix
-bind - split-window -v # -c '#{pane_current_path}'
+bind | split-window -h -c '#{pane_current_path}' # these don't work on nix
+bind - split-window -v -c '#{pane_current_path}'
+bind c new-window -c "#{pane_current_path}"
 
 
 # reload config
