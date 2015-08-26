@@ -112,3 +112,8 @@ Plugin 'mattn/webapi-vim'
 " gist
 "
 Plugin 'mattn/gist-vim'
+
+
+" docker
+"
+Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
