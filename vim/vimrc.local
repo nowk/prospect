@@ -2,6 +2,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 filetype plugin indent on " required!
 syntax on                 " required!
+set modeline
 
 " ,V reloads it -- making all changes active (have to save first)
 map <silent> ,V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
