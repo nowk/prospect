@@ -184,6 +184,7 @@ au BufNewFile,BufRead Dockerfile set filetype=dockerfile
 " language tab settings
 "
 au Filetype go         setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+au Filetype c          setlocal tabstop=4 shiftwidth=4 softtabstop=4
 au Filetype md         setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au Filetype markdown   setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au Filetype manifest   setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
