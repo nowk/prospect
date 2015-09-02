@@ -420,3 +420,9 @@ command NodeRun  :w !node
 command NodeRunh :w !node --harmony
 command Mocha    :call RunMocha('', 0)
 command Mochah   :call RunMocha(' --harmony', 0)
+
+function! ChmodXFunc()
+  execute "!sudo chmod +x " .expand("%p")
+endfunction
+
+command ChmodX :call ChmodXFunc()
