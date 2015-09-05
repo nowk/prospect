@@ -284,6 +284,11 @@ let g:syntastic_enable_highlighting = 1
 " let g:syntastic_javascript_checker  = 'jshint' " npm install jshint -g
 " let g:syntastic_stl_format          = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
+" https://github.com/fatih/vim-go/issues/144#issuecomment-59598099
+" NOTE solves slowdown issue with saving go files instead of modifying the 
+" syntastic checker
+" let g:loaded_syntastic_go_go_checker = 1
+
 
 " ctrlp
 "

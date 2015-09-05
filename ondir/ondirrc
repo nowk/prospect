@@ -1,5 +1,0 @@
-enter ~/Documents/(github|golang|12)/([^/]+)
-  [[ -s $HOME/.ondir/ondirrc.zsh ]] && . $HOME/.ondir/ondirrc.zsh # ondir
-
-leave ~/Documents/(github|golang|12)/([^/]+)
-  # export GOPATH=$HOME/golang
