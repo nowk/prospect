@@ -421,8 +421,19 @@ command NodeRunh :w !node --harmony
 command Mocha    :call RunMocha('', 0)
 command Mochah   :call RunMocha(' --harmony', 0)
 
-function! ChmodXFunc()
-  execute "!sudo chmod +x " .expand("%p")
+" chmod +x command
+"
+function! s:chmodxFunc()
+  execute "!sudo chmod +x " . expand("%p")
 endfunction
 
-command ChmodX :call ChmodXFunc()
+command Chmodx :call s:chmodxFunc()
+
+" cat <file>
+" for easy cut & paste (pixel)
+"
+function! s:catFunc()
+  execute "!cat ". expand("%p")
+endfunction
+
+command Catf :call s:catFunc()
