@@ -1,5 +1,3 @@
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
 filetype plugin indent on " required!
 syntax on                 " required!
 set modeline
@@ -290,22 +288,43 @@ let g:syntastic_enable_highlighting = 1
 " let g:loaded_syntastic_go_go_checker = 1
 
 
-" ctrlp
+" Unite
 "
-let g:ctrlp_map                   = '<c-p>'
-let g:ctrlp_cmd                   = 'CtrlP'
-let g:ctrlp_working_path_mode     = 'ra'
-let g:ctrlp_regexp                = 1
-let g:ctrlp_open_new_file         = 'r'
-let g:ctrlp_max_height            = 15
-let g:ctrlp_match_window_reversed = 1
-let g:ctrlp_reuse_window          = 'netrw\|nerdtree'
-let g:ctrlp_switch_buffer         = 0
-let g:ctrlp_show_hidden           = 1
-set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip,*.git,*.css_cache,*.asset_cache     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-set wildignore+=*.*.orig,.DS_Store
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:unite_source_history_yank_enable = 1
+" let g:unite_source_rec_max_cache_files = 0
+
+nnoremap <C-p> :Unite -buffer-name=files -start-insert file_rec/async:!<cr>
+nnoremap <C-b> :Unite -buffer-name=buffer -start-insert buffer<cr>
+
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#custom#source('file_rec,file_rec/async,file_mru,file,buffer,grep',
+      \ 'ignore_pattern', join([
+      \ '\.swp', '\.swo', '\~$',
+      \ '\.git/', '\.svn/', '\.hg/',
+      \ '^tags$', '\.taghl$',
+      \ 'node_modules/', 'log/', 'tmp/', 'obj/',
+      \ ], '\|'))
+call unite#custom#profile('default', 'context', {
+      \   'prompt': '»» ',
+      \   'start_insert': 1,
+      \   'update_time': 200,
+      \   'cursor_line_highlight': 'UniteSelectedLine',
+      \ })
+call unite#custom#source('file_rec,file_rec/async,file_mru,file,buffer,grep',
+      \ 'max_candidates', 0)
+
+" http://www.codeography.com/2013/06/17/replacing-all-the-things-with-unite-vim.html
+" Custom mappings for the unite buffer
+autocmd FileType unite call s:unite_settings()
+function! s:unite_settings()
+  " Play nice with supertab
+  let b:SuperTabDisabled=1
+
+  " Enable navigation with control-j and control-k in insert mode
+  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
+  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+endfunction
 
 
 " easymotion, \\ is being used by comments

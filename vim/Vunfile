@@ -15,7 +15,6 @@ Plugin 'nowk/genericdc'
 
 " Required utilities 
 "
-Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-rooter'
 Plugin 'godlygeek/tabular'
@@ -24,7 +23,6 @@ Plugin 'Raimondi/delimitMate'
 
 " search
 "
-Plugin 'rking/ag.vim' " requires ag `brew install ag`
 Plugin 'osyo-manga/vim-over'
 Plugin 'Lokaltog/vim-easymotion'
 " Plugin 'haya14busa/vim-easyoperator-line'
@@ -54,6 +52,11 @@ Bundle 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-dispatch'
+
+" Shougo
+"
+Plugin 'shougo/vimproc.vim'
+Plugin 'shougo/unite.vim'
 
 
 " multi-cursor editing
