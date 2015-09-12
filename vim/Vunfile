@@ -40,8 +40,8 @@ Plugin 'honza/vim-snippets'
 
 " code completion
 "
-Plugin 'Valloric/YouCompleteMe'
-" Plugin 'Shougo/neocomplete.vim' " not particularly clean with Go, great with
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete.vim' " not particularly clean with Go, great with
 " others
 
 
