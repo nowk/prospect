@@ -192,6 +192,11 @@ au Filetype sh         setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 au Filetype json       setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 
+" commenting
+"
+au BufNewFile,BufRead * setlocal formatoptions-=cr formatoptions+=o
+
+
 " ------------------------------------------------------------------------- "
 " Plugin settings                                                              "
 " ------------------------------------------------------------------------- "
