@@ -479,18 +479,18 @@ command Mochah   :call RunMocha(' --harmony', 0)
 
 " chmod +x command
 "
-function! s:chmodxFunc()
+fu! s:chmodxFunc()
   execute "!sudo chmod +x " . expand("%p")
-endfunction
+endfu
 
 command Chmodx :call s:chmodxFunc()
 
 " cat <file>
 " for easy cut & paste (pixel)
 "
-function! s:catFunc()
+fu! s:catFunc()
   execute "!cat ". expand("%p")
-endfunction
+endfu
 
 command Catf :call s:catFunc()
 
