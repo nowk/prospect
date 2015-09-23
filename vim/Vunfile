@@ -120,3 +120,8 @@ Plugin 'mattn/gist-vim'
 " docker
 "
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+
+
+" some last minute things
+"
+Plugin 'nowk/zzero-hour'
