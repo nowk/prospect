@@ -477,6 +477,7 @@ command NodeRunh :w !node --harmony
 command Mocha    :call RunMocha('', 0)
 command Mochah   :call RunMocha(' --harmony', 0)
 
+
 " chmod +x command
 "
 fu! s:chmodxFunc()
@@ -484,6 +485,7 @@ fu! s:chmodxFunc()
 endfu
 
 command Chmodx :call s:chmodxFunc()
+
 
 " cat <file>
 " for easy cut & paste (pixel)
