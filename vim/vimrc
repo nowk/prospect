@@ -292,7 +292,7 @@ let g:syntastic_javascript_checkers  = ['eslint']
 let g:syntastic_mode_map = {
   \ 'mode': 'active',
   \ 'active_filetypes': [],
-  \ 'passive_filetypes': ['go']
+  \ 'passive_filetypes': ['go', 'javascript']
   \ }
 
 " SaveAndCheck saves and checks a file with Syntastic's SyntasticCheck
