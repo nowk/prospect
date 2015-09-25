@@ -284,7 +284,7 @@ let g:syntastic_loc_list_height     = 4
 let g:syntastic_enable_highlighting = 1
 " let g:syntastic_quiet_warnings      = 1
 " let g:syntastic_auto_jump           = 1
-" let g:syntastic_javascript_checker  = 'jshint' " npm install jshint -g
+let g:syntastic_javascript_checkers  = ['eslint']
 " let g:syntastic_stl_format          = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
 " https://github.com/fatih/vim-go/issues/144
@@ -458,7 +458,7 @@ au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:U
 " node, aka dead.js
 "
 function! RunMocha(flag, tobuf)
-    let command = "NODE_ENV=test ./node_modules/mocha/bin/mocha " . expand("%p") . " --reporter spec" . a:flag
+    let command = "NODE_ENV=test ./docker-run mocha " . expand("%p") . " --reporter spec" . a:flag
     if a:tobuf
       let out = system(command)
       " tabnew
