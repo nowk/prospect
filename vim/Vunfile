@@ -20,6 +20,9 @@ Plugin 'airblade/vim-rooter'
 Plugin 'godlygeek/tabular'
 Plugin 'Raimondi/delimitMate'
 
+Plugin 'kien/ctrlp.vim'
+Plugin 'rking/ag.vim'  " requires ag `brew install ag`
+
 
 " search
 "
@@ -55,8 +58,8 @@ Plugin 'tpope/vim-dispatch'
 
 " Shougo
 "
-Plugin 'shougo/vimproc.vim'
-Plugin 'shougo/unite.vim'
+" Plugin 'shougo/vimproc.vim'
+" Plugin 'shougo/unite.vim'
 
 
 " multi-cursor editing
