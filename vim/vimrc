@@ -130,8 +130,8 @@ vmap D y'>p
 
 " Mappings to find TODOs and stuff
 "
-nnoremap ,td :noautocmd vimgrep /TODO/j **/*.js<CR>:cw<CR>
-nnoremap ,fm :noautocmd vimgrep /FIXME/j **/*.js<CR>:cw<CR>
+nnoremap ,td :noautocmd vimgrep /TODO/j **/*<CR>:cw<CR>
+nnoremap ,fm :noautocmd vimgrep /FIXME/j **/*<CR>:cw<CR>
 
 " MUST disable iterms CMD+r, it refreshes view and screws everything up afterwards
 "
