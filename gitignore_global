@@ -41,6 +41,7 @@ Thumbs.db
 *~
 *.orig
 *.rej
+*.swo
 *.swp
 .#*
 *.obj
@@ -63,3 +64,5 @@ ondirrc
 
 *.sublime-project
 .envrc
+
+.vagrant
