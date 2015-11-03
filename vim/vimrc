@@ -430,18 +430,9 @@ au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:U
 " node, aka dead.js
 "
 function! s:jsTest(bang)
-  if a:bang
-    let flag = "--harmony"
-  else
-    let flag = ""
-  endif
-
-  let cmd = "NODE_ENV=test ./docker-run mocha "
-    \ . expand("%p")
-    \ . " --reporter spec "
-    \ . flag
-
-  execute "!echo '" . cmd . "' && " . cmd
+  " directly call make test
+  let cmd = "TESTARGS=\"". expand("%p") ." --reporter spec\" make test"
+  execute "!" . cmd
 endfunction
 
 command! -bang JsTest call s:jsTest(<bang>0)
