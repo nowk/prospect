@@ -1,0 +1,12 @@
+[begin] (fluxbox)
+  [exec] (TERM) { /usr/bin/uxterm -u8 -fg grey87 -bg grey6 -fa "DejaVu Sans Mono for Powerline:antialias=false" -fs 9 -T "Zsh" -e /bin/zsh5 }
+  [exec] (CHROME) { /usr/bin/google-chrome-stable }
+  [exec] (FIREFOX) { /usr/local/bin/firefox }
+  [nop] ()
+  [submenu] (MENU)
+    [include] (/etc/X11/fluxbox/fluxbox-menu)
+  [end]
+  [nop] ()
+  [exit] (EXIT)
+  [nop] ()
+[end]
