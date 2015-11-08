@@ -7,16 +7,8 @@ EXPORTS_DIR=$HOME/.prospect/exports
 [[ -f $EXPORTS_DIR/rds ]]         && . $EXPORTS_DIR/rds
 [[ -f $EXPORTS_DIR/local ]]       && . $EXPORTS_DIR/local
 [[ -f $EXPORTS_DIR/env ]]         && . $EXPORTS_DIR/env
-[[ -f $EXPORTS_DIR/boot2docker ]] && . $EXPORTS_DIR/boot2docker
 [[ -f $EXPORTS_DIR/vms ]]         && . $EXPORTS_DIR/vms
 [[ -f $EXPORTS_DIR/display ]]     && . $EXPORTS_DIR/display
-
-# load vms
-#
-[[ -s $HOME/.nvm/nvm.sh ]]      && . $HOME/.nvm/nvm.sh      # nvm
-[[ -s $HOME/.rvm/scripts/rvm ]] && . $HOME/.rvm/scripts/rvm # rvm
-[[ -s $HOME/.ondir/ondir.zsh ]] && . $HOME/.ondir/ondir.zsh # ondir
-
 
 # set default term to support italic
 # to test:
