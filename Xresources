@@ -1,0 +1,7 @@
+XTerm*vt100.translations: #override \n\
+  Ctrl Shift <KeyPress> C: copy-selection(CLIPBOARD, CUT_BUFFER0) \n\
+  Ctrl Shift <KeyPress> V: insert-selection(CLIPBOARD, CUT_BUFFER0) \n
+
+UXTerm*vt100.translations: #override \n\
+  Ctrl Shift <KeyPress> C: copy-selection(CLIPBOARD, CUT_BUFFER0) \n\
+  Ctrl Shift <KeyPress> V: insert-selection(CLIPBOARD, CUT_BUFFER0) \n
