@@ -125,6 +125,11 @@ Plugin 'mattn/gist-vim'
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
 
+" utils
+"
+Plugin 'kana/vim-fakeclip'
+
+
 " some last minute things
 "
 Plugin 'nowk/zzero-hour'
