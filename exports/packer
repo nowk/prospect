@@ -1,0 +1,2 @@
+# vim: set filetype=sh :
+export PATH=$PATH:/opt/packer
