@@ -3,6 +3,8 @@ EXPORTS_DIR=$HOME/.prospect/exports
 # exports
 #
 [[ -f $EXPORTS_DIR/golang ]]      && . $EXPORTS_DIR/golang
+[[ -f $EXPORTS_DIR/terraform ]]   && . $EXPORTS_DIR/terraform
+[[ -f $EXPORTS_DIR/packer ]]      && . $EXPORTS_DIR/packer
 [[ -f $EXPORTS_DIR/rkt ]]         && . $EXPORTS_DIR/rkt
 [[ -f $EXPORTS_DIR/rds ]]         && . $EXPORTS_DIR/rds
 [[ -f $EXPORTS_DIR/local ]]       && . $EXPORTS_DIR/local
