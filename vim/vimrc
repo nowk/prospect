@@ -220,6 +220,8 @@ let g:go_highlight_methods=1
 let g:go_highlight_structs=1
 let g:go_highlight_operators=1
 
+let g:go_term_mode="vsplit"
+
 au FileType go set listchars=tab:·\ 
 au FileType go nmap ,r <Plug>(go-run)
 au FileType go nmap ,b <Plug>(go-build)
@@ -516,7 +518,21 @@ function! Multiple_cursors_before()
   " echo 'Disabled autocomplete'
 endfunction
 
-function! Multiple_cursors_after()
-  exe 'NeoCompleteUnlock'
-  " echo 'Enabled autocomplete'
+" adujust quickfix window
+" http://vim.wikia.com/wiki/Automatically_fitting_a_quickfix_window_height
+" NOTE: this is primarily for nvim, the quickfix wundows in nvm always default
+" to a 1 line height.
+au FileType qf call AdjustWindowHeight(3, 10)
+function! AdjustWindowHeight(minheight, maxheight)
+  let l = 1
+  let n_lines = 0
+  let w_width = winwidth(0)
+  while l <= line('$')
+    " number to float for division
+    let l_len = strlen(getline(l)) + 0.0
+    let line_width = l_len/w_width
+    let n_lines += float2nr(ceil(line_width))
+    let l += 1
+  endw
+  exe max([min([n_lines, a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
