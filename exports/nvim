@@ -1,0 +1,7 @@
+# vim: set filetype=sh :
+
+# add to PATH
+export PATH=$HOME/opt/neovim/bin:$PATH
+
+# alias to load ~/.vimrc
+alias nvim='nvim -u ~/.vimrc'

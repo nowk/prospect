@@ -2,6 +2,7 @@ EXPORTS_DIR=$HOME/.prospect/exports
 
 # exports
 #
+[[ -f $EXPORTS_DIR/nvim ]]        && . $EXPORTS_DIR/nvim
 [[ -f $EXPORTS_DIR/golang ]]      && . $EXPORTS_DIR/golang
 [[ -f $EXPORTS_DIR/terraform ]]   && . $EXPORTS_DIR/terraform
 [[ -f $EXPORTS_DIR/packer ]]      && . $EXPORTS_DIR/packer
