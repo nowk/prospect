@@ -190,6 +190,7 @@ au Filetype make       setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 au Filetype dockerfile setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 au Filetype sh         setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 au Filetype json       setlocal tabstop=4 shiftwidth=4 softtabstop=4
+au Filetype toml       setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 
 " commenting
