@@ -5,3 +5,16 @@ export PATH=$HOME/opt/neovim/bin:$PATH
 
 # alias to load ~/.vimrc
 alias nvim='nvim -u ~/.vimrc'
+
+# alias vi/vim/editor
+alias vi=nvim
+alias vim=nvim
+alias editor=nvim
+
+# via update-alternatives
+# sudo update-alternatives --install /usr/bin/vi vi /home/nowk/opt/neovim/bin/nvim 60
+# sudo update-alternatives --config vi
+# sudo update-alternatives --install /usr/bin/vim vim /home/nowk/opt/neovim/bin/nvim 60
+# sudo update-alternatives --config vim
+# sudo update-alternatives --install /usr/bin/editor editor /home/nowk/opt/neovim/bin/nvim 60
+# sudo update-alternatives --config editor
