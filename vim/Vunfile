@@ -113,6 +113,10 @@ Plugin 'cespare/vim-toml'
 "
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
 
+" terraform
+"
+Plugin 'markcornick/vim-terraform'
+
 
 " web api
 "

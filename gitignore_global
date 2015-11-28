@@ -66,3 +66,6 @@ ondirrc
 .envrc
 
 .vagrant
+
+.tfvars
+*.tfvars
