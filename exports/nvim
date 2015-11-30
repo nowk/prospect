@@ -7,7 +7,7 @@ export PATH=$HOME/opt/neovim/bin:$PATH
 alias nvim='nvim -u ~/.vimrc'
 
 # alias vi/vim/editor
-alias vi=nvim
+# alias vi=nvim
 alias vim=nvim
 alias editor=nvim
 
