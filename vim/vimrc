@@ -221,7 +221,7 @@ let g:go_highlight_methods=1
 let g:go_highlight_structs=1
 let g:go_highlight_operators=1
 
-let g:go_term_mode="vsplit"
+let g:go_term_mode="split"
 
 au FileType go set listchars=tab:·\ 
 au FileType go nmap ,r <Plug>(go-run)
