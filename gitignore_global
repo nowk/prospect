@@ -69,3 +69,5 @@ ondirrc
 
 .tfvars
 *.tfvars
+
+.docker
