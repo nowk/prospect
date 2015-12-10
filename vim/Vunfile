@@ -141,3 +141,8 @@ Plugin 'kana/vim-fakeclip'
 " some last minute things
 "
 Plugin 'nowk/zzero-hour'
+
+
+" neovim
+"
+Plugin 'benekastah/neomake'
