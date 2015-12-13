@@ -285,7 +285,8 @@ let NERDTreeIgnore = [
 let g:neomake_go_gotest_maker = {
 	\ 'exe': 'go',
 	\ 'args': ['test', '-c'],
-	\ 'errorformat': 
+	\ 'append_file': 0,
+	\ 'errorformat':
 		\ '%f:%l: %m,' .
 		\ '%-G#%.%#'
 	\ }
