@@ -18,7 +18,7 @@ EXPORTS_DIR=$HOME/.prospect/exports
 #   $echo `tput sitm`italics`tput ritm`
 #
 # https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/
-export TERM=xterm-256color-italic
+export TERM=xterm-256color
 
 
 # reload for tmux
