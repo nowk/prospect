@@ -52,5 +52,7 @@ install: clean_links
 	@vim +PluginInstall +qall
 	# uncomment our colorscheme back
 	@sed -i -e 's/"colorscheme/colorscheme/' ~/.vim/vimrc
+	# copy over our theme for oh-my-zsh
+	@cp $(shell pwd)/oh-my-zsh/themes/normalt.zsh-theme ~/.oh-my-zsh/themes/
 .PHONY: install
 
