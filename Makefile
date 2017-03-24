@@ -39,10 +39,10 @@ install_vundle:
 
 
 install: clean_links
-	@$(MAKE) -s lnk_vim
-	@$(MAKE) -s lnk_tmux
-	@$(MAKE) -s lnk_zsh
-	@$(MAKE) -s lnk_git
+	@$(MAKE) -s link_vim
+	@$(MAKE) -s link_tmux
+	@$(MAKE) -s link_zsh
+	@$(MAKE) -s link_git
 	@$(MAKE) -s install_vundle
 	#
 	@vim +PluginInstall +qall
