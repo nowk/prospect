@@ -1,7 +1,7 @@
 default: install
 
 clean_links:
-	rm -f \
+	@rm -f \
 		~/.vim \
 		~/.vimrc \
 		~/.tmux \
@@ -12,23 +12,23 @@ clean_links:
 		~/.gitignore_global
 
 link_vim:
-	ln -s $(shell pwd)/vim \
+	@ln -s $(shell pwd)/vim \
 		~/.vim \
 		&& ln -s $(shell pwd)/vimrc ~/.vimrc
 .PHONY: link_vim
 
 link_tmux:
-	ln -s $(shell pwd)/tmux ~/.tmux \
+	@ln -s $(shell pwd)/tmux ~/.tmux \
 		&& ln -s $(shell pwd)/tmux.conf ~/.tmux.conf
 .PHONY: link_tmux
 
 link_zsh:
-	ln -s $(shell pwd)/zshrc ~/.zshrc \
+	@ln -s $(shell pwd)/zshrc ~/.zshrc \
 		&& ln -s $(shell pwd)/zshrc.local ~/.zshrc.local
 .PHONY: link_zsh
 
 link_git:
-	ln -s $(shell pwd)/gitconfig ~/.gitconfig \
+	@ln -s $(shell pwd)/gitconfig ~/.gitconfig \
 		&& ln -s $(shell pwd)/gitignore_global ~/.gitignore_global
 .PHONY: link_git
 
