@@ -45,6 +45,12 @@ install: clean_links
 	@$(MAKE) -s link_git
 	@$(MAKE) -s install_vundle
 	#
+	# comment out colorscheme setting, wont' be available till after
+	# vundle which stops the install from completing without a countinuing key
+	# event
+	@sed -i -e 's/colorscheme/"colorscheme/' ~/.vim/vimrc
 	@vim +PluginInstall +qall
+	# uncomment our colorscheme back
+	@sed -i -e 's/"colorscheme/colorscheme/' ~/.vim/vimrc
 .PHONY: install
 
