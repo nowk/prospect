@@ -7,11 +7,10 @@
 "
 Plugin 'gmarik/Vundle.vim'
 
-
 " Theme
 "
 Plugin 'nowk/genericdc'
-
+Plugin 'alessandroyorba/despacio'
 
 " Required utilities 
 "
@@ -21,8 +20,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'Raimondi/delimitMate'
 
 Plugin 'kien/ctrlp.vim'
-Plugin 'rking/ag.vim'  " requires ag `brew install ag`
-
+Plugin 'rking/ag.vim'
 
 " search
 "
@@ -30,7 +28,6 @@ Plugin 'osyo-manga/vim-over'
 Plugin 'Lokaltog/vim-easymotion'
 " Plugin 'haya14busa/vim-easyoperator-line'
 " Plugin 'haya14busa/vim-easyoperator-phrase'
-
 
 " Syntax and Code
 "
@@ -40,13 +37,10 @@ Plugin 'majutsushi/tagbar'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
-
 " code completion
 "
-Plugin 'Valloric/YouCompleteMe'
-" Plugin 'Shougo/neocomplete.vim' " not particularly clean with Go, great with
-" others
-
+" Plugin 'Valloric/YouCompleteMe' " this is very ram heavy
+Plugin 'Shougo/neocomplete.vim' " not particularly clean with Go, great with others
 
 " Tpope
 "
@@ -54,30 +48,26 @@ Plugin 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-dispatch'
+" Plugin 'tpope/vim-dispatch'
 
 " Shougo
 "
 " Plugin 'shougo/vimproc.vim'
 " Plugin 'shougo/unite.vim'
 
-
 " multi-cursor editing
 "
 " Plugin 'kristijanhusak/vim-multiple-cursors'
 Plugin 'terryma/vim-multiple-cursors'
-
 
 " status bar
 "
 Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
 
-
 " time tracking
 "
 Plugin 'wakatime/vim-wakatime'
-
 
 " ---
 " Language specific
@@ -88,7 +78,6 @@ Plugin 'fatih/vim-go'
 Plugin 'rhysd/vim-go-impl'
 Plugin 'garyburd/go-explorer'
 
-
 " Javascript
 "
 Plugin 'pangloss/vim-javascript' " required by vim-jsx as well
@@ -97,7 +86,6 @@ Plugin 'mxw/vim-jsx'
 " npm install -g eslint
 " npm install -g babel-eslint
 " npm install -g eslint-plugin-react
-
 
 " HTML/CSS
 "
@@ -115,34 +103,21 @@ Plugin 'Matt-Deacalion/vim-systemd-syntax'
 
 " terraform
 "
-Plugin 'markcornick/vim-terraform'
-
+Plugin 'hashivim/vim-terraform'
 
 " web api
 "
 Plugin 'mattn/webapi-vim'
 
-
 " gist
 "
 Plugin 'mattn/gist-vim'
-
 
 " docker
 "
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
-
-" utils
-"
-Plugin 'kana/vim-fakeclip'
-
-
-" some last minute things
-"
-Plugin 'nowk/zzero-hour'
-
-
 " neovim
 "
 Plugin 'benekastah/neomake'
+
