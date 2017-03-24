@@ -22,7 +22,6 @@ endif
 let mapleader = "\\"
 
 set t_Co=256
-set term=screen-256color-italic
 set lazyredraw
 set ttyfast
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
