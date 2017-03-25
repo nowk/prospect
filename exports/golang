@@ -1,4 +1,5 @@
 # vim: set filetype=sh :
-export GOROOT=/opt/go
-export GOPATH=$HOME/devs/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+#export GOROOT=/opt/go
+#export GOPATH=$HOME/devs/go
+#export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
