@@ -188,8 +188,10 @@ au Filetype manifest   setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 au Filetype make       setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 au Filetype dockerfile setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 au Filetype sh         setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
-au Filetype json       setlocal tabstop=4 shiftwidth=4 softtabstop=4
+au Filetype json       setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au Filetype toml       setlocal tabstop=4 shiftwidth=4 softtabstop=4
+" au Filetype tf         setlocal tabstop=4 shiftwidth=4 softtabstop=4
+au Filetype vim        setlocal tabstop=2 shiftwidth=2 softtabstop=2 noexpandtab
 
 
 " commenting
@@ -352,17 +354,19 @@ let g:ctrlp_match_window_reversed = 1
 let g:ctrlp_reuse_window          = 'netrw\|nerdtree'
 let g:ctrlp_switch_buffer         = 0
 let g:ctrlp_show_hidden           = 1
-set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip,*.git,*.css_cache,*.asset_cache     " MacOSX/Linux
+set wildignore+=*/tmp/*,*/node_modules/*,*/bower_components/*,*.so,*.swp,*.zip,*.git,*.css_cache,*.asset_cache     " MacOSX/Linux
 set wildignore+=*/.vendor/*,*/.bundle/* ",*/vendor/*,*/bundle/*
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 set wildignore+=*.*.orig,.DS_Store
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
+let NERDTreeIgnore=['\.test$','\.bin$', '^vendor$', '^node_modules$', '^bower_components$', '\.tfstate$', '\.tfstate\.backup$']
+
 map <silent> <c-l> :CtrlPClearCache<cr>
 
 " ag
 "
-let g:ag_prg='ag -S --nocolor --nogroup --column --ignore node_modules --ignore "./\.?vendor/*"  --ignore "./\.?bundle/*"'
+let g:ag_prg='ag -S --nocolor --nogroup --column --ignore node_modules --ignore bower_components --ignore "./\.?vendor/*"  --ignore "./\.?bundle/*"'
 
 
 " easymotion, \\ is being used by comments
@@ -386,6 +390,8 @@ map N <Plug>(easymotion-prev)
 " commentary
 "
 autocmd FileType go set commentstring=//\ %s
+autocmd FileType terraform set commentstring=//\ %s
+autocmd FileType tf set commentstring=//\ %s
 " xnoremap // <Plug>CommentaryLine
 
 " vim-multiple-cursors
@@ -461,15 +467,31 @@ endfunction
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
 
-" node, aka dead.js
+" mocha test run command
 "
-function! s:jsTest(bang)
-  " directly call make test
-  let cmd = "TESTARGS=\"". expand("%p") ." --reporter spec\" make test"
-  execute "!" . cmd
+fu! s:mochaTest()
+  exec "!docker-compose run --rm -e NODE_ENV=test mocha " .expand("%p") ." --reporter spec --bail --no-colors --require babel.mocha"
+endfu
+
+command MochaTest call s:mochaTest()
+
+
+" ruby tests commands
+"
+function! s:rspecTest(bang)
+  let file_line = expand("%p")
+
+  if !a:bang
+    let file_line = file_line .":" .line(".")
+  endi
+
+	" TODO do we need to add RAILS_ENV=test ? isn't Rspec alwas in test anyway?
+  let cmd = "docker-compose run --rm -e RAILS_ENV=test rspec " .file_line  ." --format doc --color"
+  echo cmd
+  execute "!" .cmd
 endfunction
 
-command! -bang JsTest call s:jsTest(<bang>0)
+command! -bang RspecTest call s:rspecTest(<bang>0)
 
 
 " chmod +x command
