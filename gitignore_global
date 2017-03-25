@@ -67,7 +67,7 @@ ondirrc
 
 .vagrant
 
-.tfvars
-*.tfvars
+# .tfvars
+# *.tfvars
 
 .docker
