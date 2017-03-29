@@ -39,8 +39,8 @@ Plugin 'honza/vim-snippets'
 
 " code completion
 "
-" Plugin 'Valloric/YouCompleteMe' " this is very ram heavy
-Plugin 'Shougo/neocomplete.vim' " not particularly clean with Go, great with others
+Plugin 'Valloric/YouCompleteMe' " this is very ram heavy
+" Plugin 'Shougo/neocomplete.vim' " not particularly clean with Go, great with others
 
 " Tpope
 "
