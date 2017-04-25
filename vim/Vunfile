@@ -119,5 +119,5 @@ Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
 " neovim
 "
-Plugin 'benekastah/neomake'
+" Plugin 'benekastah/neomake'
 

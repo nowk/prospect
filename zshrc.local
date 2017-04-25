@@ -1,11 +1,12 @@
-EXPORTS_DIR=$HOME/.prospect/exports
+EXPORTS_DIR=$HOME/prospect/exports
 
 # exports
 #
-[[ -f $EXPORTS_DIR/golang ]]      && . $EXPORTS_DIR/golang
-[[ -f $EXPORTS_DIR/local ]]       && . $EXPORTS_DIR/local
-[[ -f $EXPORTS_DIR/env ]]         && . $EXPORTS_DIR/env
-[[ -f $EXPORTS_DIR/display ]]     && . $EXPORTS_DIR/display
+[[ -f $EXPORTS_DIR/golang ]]  && . $EXPORTS_DIR/golang
+[[ -f $EXPORTS_DIR/local ]]   && . $EXPORTS_DIR/local
+[[ -f $EXPORTS_DIR/env ]]     && . $EXPORTS_DIR/env
+[[ -f $EXPORTS_DIR/display ]] && . $EXPORTS_DIR/display
+[[ -f $EXPORTS_DIR/path ]]    && . $EXPORTS_DIR/path
 
 # set default term to support italic
 # to test:

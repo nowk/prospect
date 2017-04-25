@@ -305,10 +305,10 @@ let g:neomake_go_go_maker = {
 		\ '%C%\s%\+%m,' .
 		\ '%-G#%.%#'
 	\ }
-au BufEnter *_test.go let g:neomake_go_enabled_makers = ['gotest']
-au BufLeave *_test.go let g:neomake_go_enabled_makers = ['go', 'golint', 'govet']
-
-autocmd! BufWritePost *.go Neomake
+" au BufEnter *_test.go let g:neomake_go_enabled_makers = ['gotest']
+" au BufLeave *_test.go let g:neomake_go_enabled_makers = ['go', 'golint', 'govet']
+" 
+" autocmd! BufWritePost *.go Neomake
 
 
 " Syntastic
@@ -467,6 +467,40 @@ endfunction
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
 
+" golang test command
+"
+" vim-go (plain vim) fails for some unknown reason
+fu! s:goTest(bang)
+	let file = expand('%')
+
+	if !file =~# '^\f\+\.go$'
+		echo "go: [test] not a test file"
+		return
+	endif
+
+	let args = []
+
+	if !a:bang
+		let test = search('func \(Test\|Example\)', "bcnW")
+
+		if test == 0
+			echo "go: [test] no test found immediate to cursor"
+			return
+		end
+
+		let line = getline(test)
+		let name = split(split(line, " ")[1], "(")[0]
+		let args = ["-run", name . "$"]
+	endif
+
+	let cmd = "!docker-compose run --rm --no-deps -e GO_ENV=test go test " .join(args, ' ')
+
+	exec cmd
+endfu
+
+command! -bang Gotest call s:goTest(<bang>0)
+
+
 " mocha test run command
 "
 fu! s:mochaTest()
@@ -483,7 +517,7 @@ function! s:rspecTest(bang)
 
   if !a:bang
     let file_line = file_line .":" .line(".")
-  endi
+	endif
 
 	" TODO do we need to add RAILS_ENV=test ? isn't Rspec alwas in test anyway?
   let cmd = "docker-compose run --rm -e RAILS_ENV=test rspec " .file_line  ." --format doc --color"
@@ -516,17 +550,18 @@ command Catf :call s:catFunc()
 " http://vim.wikia.com/wiki/Automatically_fitting_a_quickfix_window_height
 " NOTE: this is primarily for nvim, the quickfix wundows in nvm always default
 " to a 1 line height.
-au FileType qf call AdjustWindowHeight(3, 10)
-function! AdjustWindowHeight(minheight, maxheight)
-  let l = 1
-  let n_lines = 0
-  let w_width = winwidth(0)
-  while l <= line('$')
-    " number to float for division
-    let l_len = strlen(getline(l)) + 0.0
-    let line_width = l_len/w_width
-    let n_lines += float2nr(ceil(line_width))
-    let l += 1
-  endw
-  exe max([min([n_lines, a:maxheight]), a:minheight]) . "wincmd _"
-endfunction
+" au FileType qf call AdjustWindowHeight(3, 10)
+" function! AdjustWindowHeight(minheight, maxheight)
+"   let l = 1
+"   let n_lines = 0
+"   let w_width = winwidth(0)
+"   while l <= line('$')
+"     " number to float for division
+"     let l_len = strlen(getline(l)) + 0.0
+"     let line_width = l_len/w_width
+"     let n_lines += float2nr(ceil(line_width))
+"     let l += 1
+"   endw
+"   exe max([min([n_lines, a:maxheight]), a:minheight]) . "wincmd _"
+" endfunction
+
