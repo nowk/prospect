@@ -283,9 +283,16 @@ let NERDTreeIgnore = [
 " neomake
 "
 " golang
+
+let g:neomake_open_list = 2
+
 let g:neomake_go_gotest_maker = {
 	\ 'exe': 'go',
-	\ 'args': ['test', '-c'],
+	\ 'args': [
+		\ 'test',
+		\ '-c',
+		\ './%:h'
+	\ ],
 	\ 'append_file': 0,
 	\ 'errorformat':
 		\ '%f:%l: %m,' .
@@ -295,7 +302,7 @@ let g:neomake_go_go_maker = {
 	\ 'exe': 'go',
 	\ 'args': [
 		\ 'build',
-		\ './...'
+		\ './%:h'
 	\ ],
 	\ 'append_file': 0,
 	\ 'errorformat':
@@ -305,10 +312,10 @@ let g:neomake_go_go_maker = {
 		\ '%C%\s%\+%m,' .
 		\ '%-G#%.%#'
 	\ }
-" au BufEnter *_test.go let g:neomake_go_enabled_makers = ['gotest']
-" au BufLeave *_test.go let g:neomake_go_enabled_makers = ['go', 'golint', 'govet']
-" 
-" autocmd! BufWritePost *.go Neomake
+au BufEnter *_test.go let g:neomake_go_enabled_makers = ['gotest']
+au BufLeave *_test.go let g:neomake_go_enabled_makers = ['go', 'golint', 'govet']
+
+autocmd! BufWritePost *.go Neomake
 
 
 " Syntastic
