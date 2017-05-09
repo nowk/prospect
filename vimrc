@@ -5,6 +5,13 @@ set nocompatible " be iMproved
 
 filetype off
 
+if has("nvim")
+
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
+
+endif
+
 " Vundle.vim
 "
 set rtp+=~/.vim/bundle/Vundle.vim/
