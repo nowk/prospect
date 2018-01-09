@@ -9,7 +9,8 @@ clean_links:
 		~/.zshrc \
 		~/.zshrc.local \
 		~/.gitconfig \
-		~/.gitignore_global
+		~/.gitignore_global \
+		~/.tigrc \
 
 link_vim:
 	@ln -s $(shell pwd)/vim \
@@ -32,6 +33,11 @@ link_git:
 		&& ln -s $(shell pwd)/gitignore_global ~/.gitignore_global
 .PHONY: link_git
 
+link_tig:
+	@ln -s $(shell pwd)/tigrc ~/.tigrc
+.PHONY: link_tog
+
+
 
 install_vundle:
 	@git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -44,6 +50,7 @@ install: clean_links
 	@$(MAKE) -s link_zsh
 	@$(MAKE) -s link_git
 	@$(MAKE) -s install_vundle
+	@$(MAKE) -s link_tig
 	#
 	# comment out colorscheme setting, wont' be available till after
 	# vundle which stops the install from completing without a countinuing key
