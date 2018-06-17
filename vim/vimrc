@@ -424,6 +424,27 @@ hi multiple_cursors_visual ctermfg=234 ctermbg=219
 set laststatus=2
 let g:tmuxline_theme = 'tmux'
 let g:airline#extensions#tabline#enabled = 1
+" let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+
+" FIX 
+let g:airline_symbols.readonly = 'RO'
+let g:airline_symbols.whitespace = "ws"
+let g:airline_symbols.linenr = "ln"
+let g:airline_symbols.maxlinenr = " max"
+let g:airline_symbols.branch = "br"
+let g:airline_symbols.notexists = "ne"
+let g:airline_symbols.crypt = "cr"
+
+let g:tmuxline_separators = {
+    \ 'left' : '',
+    \ 'left_alt': '>',
+    \ 'right' : '',
+    \ 'right_alt' : '<',
+    \ 'space' : ' '}
 
 
 " remove preview
