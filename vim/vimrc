@@ -384,7 +384,7 @@ let g:ctrlp_show_hidden           = 1
 set wildignore+=*/tmp/*,*/node_modules/*,*/bower_components/*,*.so,*.swp,*.zip,*.git,*.css_cache,*.asset_cache     " MacOSX/Linux
 set wildignore+=*/.vendor/*,*/.bundle/* ",*/vendor/*,*/bundle/*
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-set wildignore+=*.*.orig,.DS_Store
+set wildignore+=*.*.orig,.DS_Store,*ZoneIdentifier
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 let NERDTreeIgnore=['\.test$','\.bin$', '^vendor$', '^node_modules$', '^bower_components$', '\.tfstate$', '\.tfstate\.backup$']
