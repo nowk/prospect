@@ -196,6 +196,7 @@ au BufNewFile,BufRead *.markdown set filetype=markdown
 au BufNewFile,BufRead *.jsx      set filetype=javascript.jsx
 au BufNewFile,BufRead manifest   set filetype=json      " coreos.com/rocket
 au BufNewFile,BufRead Dockerfile set filetype=dockerfile
+au BufNewFile,BufRead *.rabl     set filetype=ruby
 
 
 " language tab settings
@@ -204,6 +205,7 @@ au Filetype go         setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 au Filetype c          setlocal tabstop=4 shiftwidth=4 softtabstop=4
 au Filetype md         setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au Filetype markdown   setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au Filetype ruby       setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au Filetype manifest   setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 au Filetype make       setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 au Filetype dockerfile setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
