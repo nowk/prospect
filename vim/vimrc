@@ -80,8 +80,23 @@ set list!
 set listchars=tab:»·,trail:·
 set linespace=3
 
-colorscheme genericdc
+" if exists('$TMUX')
+" " Colors in tmux
+" let &t_8f = "<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b = "<Esc>[48;2;%lu;%lu;%lum"
+" endif
+
+colorscheme onedark
+" colorscheme genericdc
+" colorscheme tokyo-metro
+" background color in mosh is #252525
+" set background=dark
+let g:airline_theme='onedark'
 let &colorcolumn="81"
+
+" https://stackoverflow.com/questions/4325682/vim-colorschemes-not-changing-background-color/23982923
+highlight Normal  ctermbg=NONE
+highlight nonText ctermbg=NONE
 
 set nocursorcolumn
 set nocursorline

@@ -10,7 +10,8 @@ Plugin 'gmarik/Vundle.vim'
 " Theme
 "
 Plugin 'nowk/genericdc'
-Plugin 'alessandroyorba/despacio'
+Plugin 'joshdick/onedark.vim'
+Plugin 'koirand/tokyo-metro.vim'
 
 " Required utilities 
 "
