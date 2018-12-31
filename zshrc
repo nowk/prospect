@@ -28,4 +28,4 @@ source $ZSH/oh-my-zsh.sh
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # direnv
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"

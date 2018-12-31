@@ -87,6 +87,9 @@ Plugin 'mxw/vim-jsx'
 " npm install -g eslint
 " npm install -g babel-eslint
 " npm install -g eslint-plugin-react
+" Plugin 'Quramy/tsuquyomi'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'digitaltoad/vim-pug' " Pug (formerly Jade)
 
 " HTML/CSS
 "
