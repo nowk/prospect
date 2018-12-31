@@ -37,7 +37,9 @@ link_tig:
 	@ln -s $(shell pwd)/tigrc ~/.tigrc
 .PHONY: link_tog
 
-
+link_nvim:
+	@ln -s $(shell pwd)/nvim ~/.config/nvim
+.PHONY: link_nvim
 
 install_vundle:
 	@git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -51,6 +53,7 @@ install: clean_links
 	@$(MAKE) -s link_git
 	@$(MAKE) -s install_vundle
 	@$(MAKE) -s link_tig
+	@$(MAKE) -s link_nvim
 	#
 	# comment out colorscheme setting, wont' be available till after
 	# vundle which stops the install from completing without a countinuing key
