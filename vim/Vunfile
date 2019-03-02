@@ -50,6 +50,8 @@ Plugin 'Shougo/deoplete.nvim' " Only one required for nvim
 " Plugin 'roxma/nvim-yarp'
 " Plugin 'roxma/vim-hug-neovim-rpc'
 
+Plugin 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+
 " Tpope
 "
 Plugin 'tpope/vim-commentary'
