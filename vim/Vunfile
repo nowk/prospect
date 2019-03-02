@@ -20,8 +20,10 @@ Plugin 'airblade/vim-rooter'
 Plugin 'godlygeek/tabular'
 Plugin 'Raimondi/delimitMate'
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rking/ag.vim'
+Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 't9md/vim-choosewin'
 
 " search
 "
@@ -32,7 +34,8 @@ Plugin 'Lokaltog/vim-easymotion'
 
 " Syntax and Code
 "
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'majutsushi/tagbar'
 
 Plugin 'SirVer/ultisnips'
@@ -40,8 +43,12 @@ Plugin 'honza/vim-snippets'
 
 " code completion
 "
-Plugin 'Valloric/YouCompleteMe' " this is very ram heavy
+" Plugin 'Valloric/YouCompleteMe' " this is very ram heavy
 " Plugin 'Shougo/neocomplete.vim' " not particularly clean with Go, great with others
+
+Plugin 'Shougo/deoplete.nvim' " Only one required for nvim
+" Plugin 'roxma/nvim-yarp'
+" Plugin 'roxma/vim-hug-neovim-rpc'
 
 " Tpope
 "
@@ -70,6 +77,8 @@ Plugin 'edkolev/tmuxline.vim'
 "
 Plugin 'wakatime/vim-wakatime'
 
+Plugin 'skywind3000/asyncrun.vim'
+
 " ---
 " Language specific
 
@@ -84,10 +93,8 @@ Plugin 'garyburd/go-explorer'
 Plugin 'pangloss/vim-javascript' " required by vim-jsx as well
 Plugin 'marijnh/tern_for_vim' " run `npm install` inside bundle directory
 Plugin 'mxw/vim-jsx'
-" npm install -g eslint
-" npm install -g babel-eslint
-" npm install -g eslint-plugin-react
-" Plugin 'Quramy/tsuquyomi'
+" npm install -g eslint babel-eslint eslint-plugin-react eslint-config-prettier eslint-plugin-prettier
+Plugin 'Quramy/tsuquyomi'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'digitaltoad/vim-pug' " Pug (formerly Jade)
 
@@ -96,6 +103,7 @@ Plugin 'digitaltoad/vim-pug' " Pug (formerly Jade)
 Plugin 'othree/html5.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'groenewege/vim-less'
+Plugin 'mustache/vim-mustache-handlebars'
 
 " toml
 "
@@ -124,4 +132,9 @@ Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 " neovim
 "
 Plugin 'benekastah/neomake'
+
+Plugin 'ap/vim-css-color'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'andrewstuart/vim-kubernetes'
 

@@ -466,6 +466,16 @@ let g:tmuxline_separators = {
 
 " remove preview
 set completeopt-=preview
+set omnifunc=csscomplete#CompleteCSS
+autocmd BufNewFile,BufRead *.scss             set ft=scss.css
+
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_completion_start_length = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#force_omni_input_patterns = get(g:, 'deoplete#force_omni_input_patterns', {})
+let g:deoplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+au FileType javascript,jsx setl omnifunc=tern#Complete
 
 " YouCompleteMe
 
@@ -614,4 +624,6 @@ command Catf :call s:catFunc()
 "   endw
 "   exe max([min([n_lines, a:maxheight]), a:minheight]) . "wincmd _"
 " endfunction
+
+autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
 
