@@ -479,24 +479,24 @@ au FileType javascript,jsx setl omnifunc=tern#Complete
 
 " YouCompleteMe
 
-let g:ycm_add_preview_to_completeopt=1
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_autoclose_preview_window_after_insertion=1
-let g:ycm_filetype_blacklist = {
-  \ 'gitcommit' : 1,
-  \ 'tagbar' : 1,
-  \ 'qf' : 1,
-  \ 'notes' : 1,
-  \ 'markdown' : 1,
-  \ 'unite' : 1,
-  \ 'text' : 1,
-  \ 'vimwiki' : 1,
-  \ 'pandoc' : 1,
-  \ 'infolog' : 1,
-  \ 'mail' : 1,
-  \ 'rb' : 1,
-  \ 'ruby' : 1,
-  \}
+" let g:ycm_add_preview_to_completeopt=1
+" let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_autoclose_preview_window_after_insertion=1
+" let g:ycm_filetype_blacklist = {
+"   \ 'gitcommit' : 1,
+"   \ 'tagbar' : 1,
+"   \ 'qf' : 1,
+"   \ 'notes' : 1,
+"   \ 'markdown' : 1,
+"   \ 'unite' : 1,
+"   \ 'text' : 1,
+"   \ 'vimwiki' : 1,
+"   \ 'pandoc' : 1,
+"   \ 'infolog' : 1,
+"   \ 'mail' : 1,
+"   \ 'rb' : 1,
+"   \ 'ruby' : 1,
+"   \}
 
 " utilsnips
 "
@@ -507,25 +507,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-
-" https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-17680963
-function! g:UltiSnips_Complete()
-    call UltiSnips#ExpandSnippet()
-    if g:ulti_expand_res == 0
-        if pumvisible()
-            return "\<C-n>"
-        else
-            call UltiSnips#JumpForwards()
-            if g:ulti_jump_forwards_res == 0
-               return "\<TAB>"
-            endif
-        endif
-    endif
-    return ""
-endfunction
-
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-
 
 " golang test command
 "
