@@ -93,7 +93,7 @@ Plugin 'garyburd/go-explorer'
 Plugin 'pangloss/vim-javascript' " required by vim-jsx as well
 Plugin 'marijnh/tern_for_vim' " run `npm install` inside bundle directory
 Plugin 'mxw/vim-jsx'
-" npm install -g eslint babel-eslint eslint-plugin-react eslint-config-prettier eslint-plugin-prettier
+" npm install -g eslint babel-eslint eslint-plugin-react eslint-config-prettier eslint-plugin-prettier prettier
 Plugin 'Quramy/tsuquyomi'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'digitaltoad/vim-pug' " Pug (formerly Jade)
@@ -138,3 +138,5 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'andrewstuart/vim-kubernetes'
 
+
+Plugin 'prettier/prettier'
