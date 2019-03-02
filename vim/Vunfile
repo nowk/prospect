@@ -44,8 +44,6 @@ Plugin 'honza/vim-snippets'
 " code completion
 "
 " Plugin 'Valloric/YouCompleteMe' " this is very ram heavy
-" Plugin 'Shougo/neocomplete.vim' " not particularly clean with Go, great with others
-
 Plugin 'Shougo/deoplete.nvim' " Only one required for nvim
 " Plugin 'roxma/nvim-yarp'
 " Plugin 'roxma/vim-hug-neovim-rpc'
