@@ -421,7 +421,7 @@ map N <Plug>(easymotion-prev)
 autocmd FileType go set commentstring=//\ %s
 autocmd FileType terraform set commentstring=//\ %s
 autocmd FileType tf set commentstring=//\ %s
-" xnoremap // <Plug>CommentaryLine
+map ?? <Plug>CommentaryLine
 
 " vim-multiple-cursors
 "
