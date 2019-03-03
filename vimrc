@@ -5,27 +5,21 @@ set nocompatible " be iMproved
 
 filetype off
 
+" TODO Why do we need this again?...
 if has("nvim")
-
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
-
 endif
 
-" Vundle.vim
-"
-set rtp+=~/.vim/bundle/Vundle.vim/
-
-call vundle#begin()
-
+" vim-plug starup
+" NOTE we installed ito ~/.vim/autoload so no need to init like Vundle
+call plug#begin('~/.vim/bundle')
 if filereadable(expand('~/.vim/Vunfile'))
   source ~/.vim/Vunfile
 endif
+call plug#end()
 
-call vundle#end()
-
-" vimrc local
-"
+" load our vimrc
 if filereadable(expand('~/.vim/vimrc'))
   source ~/.vim/vimrc
 endif

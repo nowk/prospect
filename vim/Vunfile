@@ -1,142 +1,100 @@
-" :PluginList          - list configured bundles
-" :PluginInstall(!)    - install(update) bundles
-" :PluginSearch(!) foo - search(or refresh cache first) for foo
-" :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
-
-" Vundle, probably a good idea
-"
-Plugin 'gmarik/Vundle.vim'
+Plug 'benekastah/neomake'
+Plug 'skywind3000/asyncrun.vim'
 
 " Theme
-"
-Plugin 'nowk/genericdc'
-Plugin 'joshdick/onedark.vim'
-Plugin 'koirand/tokyo-metro.vim'
 
-" Required utilities 
-"
-Plugin 'scrooloose/nerdtree'
-Plugin 'airblade/vim-rooter'
-Plugin 'godlygeek/tabular'
-Plugin 'Raimondi/delimitMate'
+Plug 'nowk/genericdc'
+Plug 'joshdick/onedark.vim'
+Plug 'koirand/tokyo-metro.vim'
 
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'rking/ag.vim'
-Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 't9md/vim-choosewin'
 
-" search
-"
-Plugin 'osyo-manga/vim-over'
-Plugin 'Lokaltog/vim-easymotion'
-" Plugin 'haya14busa/vim-easyoperator-line'
-" Plugin 'haya14busa/vim-easyoperator-phrase'
+" Format
 
-" Syntax and Code
-"
-" Plugin 'scrooloose/syntastic'
-Plugin 'w0rp/ale'
-Plugin 'majutsushi/tagbar'
+" Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
+Plug 'godlygeek/tabular'
+Plug 'prettier/prettier'
 
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+" Movement
+Plug 'Lokaltog/vim-easymotion'
+" Plug 'haya14busa/vim-easyoperator-line'
+" Plug 'haya14busa/vim-easyoperator-phrase'
 
-" code completion
-"
-" Plugin 'Valloric/YouCompleteMe' " this is very ram heavy
-Plugin 'Shougo/deoplete.nvim' " Only one required for nvim
-" Plugin 'roxma/nvim-yarp'
-" Plugin 'roxma/vim-hug-neovim-rpc'
+" Search
+Plug 'osyo-manga/vim-over'
+Plug 'rking/ag.vim'
 
-Plugin 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+" Syntax
+" Plug 'scrooloose/syntastic'
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'w0rp/ale'
+
+" IDEeeeeeeeee
+Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
+Plug 'bling/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'edkolev/tmuxline.vim'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdtree'
+Plug 't9md/vim-choosewin'
+Plug 'wakatime/vim-wakatime'
+
+" Multi cursor/line
+" Plug 'kristijanhusak/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
+
+" Completion
+Plug 'Shougo/deoplete.nvim' " Only one required for nvim
+if !has('nvim')
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
 " Tpope
-"
-Plugin 'tpope/vim-commentary'
-Bundle 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-" Plugin 'tpope/vim-dispatch'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-dispatch'
 
-" Shougo
-"
-" Plugin 'shougo/vimproc.vim'
-" Plugin 'shougo/unite.vim'
 
-" multi-cursor editing
-"
-" Plugin 'kristijanhusak/vim-multiple-cursors'
-Plugin 'terryma/vim-multiple-cursors'
-
-" status bar
-"
-Plugin 'bling/vim-airline'
-Plugin 'edkolev/tmuxline.vim'
-
-" time tracking
-"
-Plugin 'wakatime/vim-wakatime'
-
-Plugin 'skywind3000/asyncrun.vim'
-
-" ---
 " Language specific
+"
+"------------------------------------------------------------------------------
 
 " GO
-"
-Plugin 'fatih/vim-go'
-Plugin 'rhysd/vim-go-impl'
-Plugin 'garyburd/go-explorer'
+Plug 'fatih/vim-go'
+Plug 'rhysd/vim-go-impl'
+Plug 'garyburd/go-explorer'
 
 " Javascript
-"
-Plugin 'pangloss/vim-javascript' " required by vim-jsx as well
-Plugin 'marijnh/tern_for_vim' " run `npm install` inside bundle directory
-Plugin 'mxw/vim-jsx'
-" npm install -g eslint babel-eslint eslint-plugin-react eslint-config-prettier eslint-plugin-prettier prettier
-Plugin 'Quramy/tsuquyomi'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'digitaltoad/vim-pug' " Pug (formerly Jade)
+Plug 'pangloss/vim-javascript' " required by vim-jsx as well
+Plug 'mxw/vim-jsx'
+															 " npm install -g eslint babel-eslint eslint-plugin-react eslint-config-prettier eslint-plugin-prettier prettier
+Plug 'ternjs/tern_for_vim'    " run `npm install` inside bundle directory
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
 
-" HTML/CSS
-"
-Plugin 'othree/html5.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'groenewege/vim-less'
-Plugin 'mustache/vim-mustache-handlebars'
+" html/css
+Plug 'ap/vim-css-color'
+Plug 'digitaltoad/vim-pug' " Pug (formerly Jade)
+Plug 'groenewege/vim-less'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'mattn/emmet-vim'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'othree/html5.vim'
 
-" toml
-"
-Plugin 'cespare/vim-toml'
+" devops related
+Plug 'andrewstuart/vim-kubernetes'
+Plug 'cespare/vim-toml'
+Plug 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+Plug 'hashivim/vim-terraform'
+Plug 'Matt-Deacalion/vim-systemd-syntax'
 
-" systemd
-"
-Plugin 'Matt-Deacalion/vim-systemd-syntax'
-
-" terraform
-"
-Plugin 'hashivim/vim-terraform'
-
-" web api
-"
-Plugin 'mattn/webapi-vim'
-
-" gist
-"
-Plugin 'mattn/gist-vim'
-
-" docker
-"
-Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
-
-" neovim
-"
-Plugin 'benekastah/neomake'
-
-Plugin 'ap/vim-css-color'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'andrewstuart/vim-kubernetes'
-
-
-Plugin 'prettier/prettier'
+" OTHER
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'

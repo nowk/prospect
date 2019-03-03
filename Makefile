@@ -41,9 +41,10 @@ link_nvim:
 	@ln -s $(shell pwd)/nvim ~/.config/nvim
 .PHONY: link_nvim
 
-install_vundle:
-	@git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-.PHONY: install_vundle
+install_plug:
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+.PHONY: install_plug
 
 
 install: clean_links
@@ -51,7 +52,7 @@ install: clean_links
 	@$(MAKE) -s link_tmux
 	@$(MAKE) -s link_zsh
 	@$(MAKE) -s link_git
-	@$(MAKE) -s install_vundle
+	@$(MAKE) -s install_plug
 	@$(MAKE) -s link_tig
 	@$(MAKE) -s link_nvim
 	#

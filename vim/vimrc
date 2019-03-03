@@ -1,5 +1,5 @@
-filetype plugin indent on " required!
-syntax on                 " required!
+" filetype plugin indent on " required!
+" syntax on                 " required!
 set modeline
 
 " ,V reloads it -- making all changes active (have to save first)
