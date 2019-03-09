@@ -295,12 +295,19 @@ let g:tagbar_width=30
 nmap <silent> <leader>p :NERDTreeToggle<CR>
 nmap <silent> <leader>b :NERDTreeFromBookmark<CR>
 let NERDTreeIgnore = [
-      \ "*.*.orig",
-      \ ".DS_Store",
-      \ ".*.*sw[a-z]*",
-      \ "node_modules"
-      \]
-let NERDTreeIgnore = ['\.test$','\.bin$', '^vendor$', '^node_modules$', '^bower_components$', '\.tfstate$', '\.tfstate\.backup$']
+      \ '*.*.orig',
+      \ '.DS_Store',
+      \ '.*.*sw[a-z]*',
+      \ 'node_modules',
+      \ 'dist',
+      \ '\.test$',
+      \ '\.bin$',
+      \ '^vendor$', 
+      \ '^node_modules$', 
+      \ '^bower_components$', 
+      \ '\.tfstate$', 
+      \ '\.tfstate\.backup$'
+      \ ]
 
 " ctrlp
 "
@@ -314,7 +321,7 @@ let g:ctrlp_match_window_reversed = 1
 let g:ctrlp_reuse_window          = 'netrw\|nerdtree'
 let g:ctrlp_switch_buffer         = 0
 let g:ctrlp_show_hidden           = 1
-set wildignore+=*/tmp/*,*/node_modules/*,*/bower_components/*,*.so,*.swp,*.zip,*.git,*.css_cache,*.asset_cache     " MacOSX/Linux
+set wildignore+=*/tmp/*,*/node_modules/*,*/bower_components/*,*.so,*.swp,*.zip,*.git,*.css_cache,*.asset_cache,*/dist/*     " MacOSX/Linux
 set wildignore+=*/.vendor/*,*/.bundle/* ",*/vendor/*,*/bundle/*
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 set wildignore+=*.*.orig,.DS_Store,*ZoneIdentifier
