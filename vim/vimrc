@@ -300,6 +300,7 @@ let NERDTreeIgnore = [
       \ ".*.*sw[a-z]*",
       \ "node_modules"
       \]
+let NERDTreeIgnore = ['\.test$','\.bin$', '^vendor$', '^node_modules$', '^bower_components$', '\.tfstate$', '\.tfstate\.backup$']
 
 
 " neomake
@@ -388,8 +389,6 @@ set wildignore+=*/.vendor/*,*/.bundle/* ",*/vendor/*,*/bundle/*
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 set wildignore+=*.*.orig,.DS_Store,*ZoneIdentifier
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-
-let NERDTreeIgnore=['\.test$','\.bin$', '^vendor$', '^node_modules$', '^bower_components$', '\.tfstate$', '\.tfstate\.backup$']
 
 map <silent> <c-l> :CtrlPClearCache<cr>
 
