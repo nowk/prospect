@@ -388,9 +388,9 @@ set wildignore+=*/tmp/*,*/node_modules/*,*/bower_components/*,*.so,*.swp,*.zip,*
 set wildignore+=*/.vendor/*,*/.bundle/* ",*/vendor/*,*/bundle/*
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 set wildignore+=*.*.orig,.DS_Store,*ZoneIdentifier
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|bin)$'
 map <silent> <c-l> :CtrlPClearCache<cr>
+map <silent> <c-b> :CtrlPBuffer<cr>
 
 " ag
 "
