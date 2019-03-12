@@ -74,3 +74,6 @@ ondirrc
 
 *:Zone.Identifier
 Thumbs.db:encryptable
+
+.syncthing*
+*.sync-conflict*
