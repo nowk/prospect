@@ -2,6 +2,8 @@ set encoding=utf-8
 set t_Co=256
 set shell=bash
 set nocompatible " be iMproved
+set title
+set titlestring=%{expand('%:p:h')}
 
 filetype off
 
