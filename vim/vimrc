@@ -215,6 +215,8 @@ au Filetype toml       setlocal tabstop=4 shiftwidth=4 softtabstop=4
 " au Filetype tf         setlocal tabstop=4 shiftwidth=4 softtabstop=4
 au Filetype vim        setlocal tabstop=2 shiftwidth=2 softtabstop=2 noexpandtab
 
+au Filetype apiblueprint setlocal tabstop=4 shiftwidth=4 softtabstop=4
+
 
 " commenting
 "
@@ -403,6 +405,7 @@ let g:tmuxline_separators = {
 " remove preview
 set completeopt-=preview
 set omnifunc=csscomplete#CompleteCSS
+
 autocmd BufNewFile,BufRead *.scss             set ft=scss.css
 
 let g:deoplete#enable_at_startup = 1
