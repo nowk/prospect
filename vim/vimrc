@@ -548,3 +548,8 @@ command Catf :call s:catFunc()
 
 autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
 
+" comclear... well... it clears all your user commands. Get this mixed up with
+" :Commentary when the shift+c doesn't happen quite as responsively
+"
+command ComclearBeStill :echo 'Did you mean :Commentary?... Shift+C faster my friend'
+cabbrev comclear <c-r>=(getcmdtype()==':' && getcmdpos()==8 ? 'ComclearBeStill' : 'ComclearBeStill')<CR>
