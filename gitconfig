@@ -12,6 +12,7 @@
   empty        = commit --allow-empty
   bump-version = commit --allow-empty
   amend        = commit --amend
+  unstage      = reset --
 
 [branch]
   autosetuprebase = always
