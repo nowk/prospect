@@ -41,6 +41,7 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 't9md/vim-choosewin'
 Plug 'wakatime/vim-wakatime'
+Plug 'ap/vim-buftabline'
 
 " Multi cursor/line
 " Plug 'kristijanhusak/vim-multiple-cursors'
