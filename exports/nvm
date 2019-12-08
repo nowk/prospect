@@ -1,13 +1,5 @@
 # vim: set filetype=zsh :
 
-alias vim='nvim'
-alias vimdiff='nvim -d'
-
-export EDITOR=nvim
-
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # NOTE nvm term slow initialization
 # https://www.growingwiththeweb.com/2018/01/slow-nvm-init.html
@@ -23,3 +15,7 @@ export EDITOR=nvim
 # 	}
 # 	for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 # fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -46,6 +46,10 @@ install_plug:
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 .PHONY: install_plug
 
+install_theme:
+	@cp $(shell pwd)/oh-my-zsh/themes/normalt.zsh-theme ~/.oh-my-zsh/themes/
+.PHONY: install_theme
+
 
 install: clean_links
 	@$(MAKE) -s link_vim
@@ -54,7 +58,7 @@ install: clean_links
 	@$(MAKE) -s link_git
 	@$(MAKE) -s install_plug
 	@$(MAKE) -s link_tig
-	@$(MAKE) -s link_nvim
+	# @$(MAKE) -s link_nvim
 	#
 	# comment out colorscheme setting, wont' be available till after
 	# vundle which stops the install from completing without a countinuing key
@@ -64,6 +68,6 @@ install: clean_links
 	# uncomment our colorscheme back
 	@sed -i -e 's/"colorscheme/colorscheme/' ~/.vim/vimrc
 	# copy over our theme for oh-my-zsh
-	@cp $(shell pwd)/oh-my-zsh/themes/normalt.zsh-theme ~/.oh-my-zsh/themes/
+	@$(MAKE) -s install_theme
 .PHONY: install
 

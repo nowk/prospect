@@ -1,12 +1,10 @@
-EXPORTS_DIR=$HOME/prospect/exports
+EXPORTS_DIR=$HOME/.prospect/exports
 
 # exports
 #
 # TODO this should just iterate though the exports dir and load all, no more
 # static listing them
 [[ -f $EXPORTS_DIR/golang ]]  && . $EXPORTS_DIR/golang
-[[ -f $EXPORTS_DIR/heroku ]]  && . $EXPORTS_DIR/heroku
-[[ -f $EXPORTS_DIR/smlnj ]]   && . $EXPORTS_DIR/smlnj
 [[ -f $EXPORTS_DIR/local ]]   && . $EXPORTS_DIR/local
 [[ -f $EXPORTS_DIR/env ]]     && . $EXPORTS_DIR/env
 [[ -f $EXPORTS_DIR/display ]] && . $EXPORTS_DIR/display

@@ -48,11 +48,11 @@ Plug 'ap/vim-buftabline'
 Plug 'terryma/vim-multiple-cursors'
 
 " Completion
-Plug 'Shougo/deoplete.nvim' " Only one required for nvim
-if !has('nvim')
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-endif
+" Plug 'Shougo/deoplete.nvim' " Only one required for nvim
+" if !has('nvim')
+" Plug 'roxma/nvim-yarp'
+" Plug 'roxma/vim-hug-neovim-rpc'
+" endif
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
 " Tpope
