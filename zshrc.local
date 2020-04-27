@@ -10,6 +10,7 @@ EXPORTS_DIR=$HOME/.prospect/exports
 [[ -f $EXPORTS_DIR/display ]] && . $EXPORTS_DIR/display
 [[ -f $EXPORTS_DIR/path ]]    && . $EXPORTS_DIR/path
 [[ -f $EXPORTS_DIR/nvm ]]     && . $EXPORTS_DIR/nvm
+[[ -f $EXPORTS_DIR/rvm ]]     && . $EXPORTS_DIR/rvm
 
 # set default term to support italic
 # to test:
