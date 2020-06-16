@@ -41,6 +41,10 @@ link_nvim:
 	@ln -s $(shell pwd)/nvim ~/.config/nvim
 .PHONY: link_nvim
 
+link_direnvrc:
+	@ln -s $(shell pwd)/direnvrc ~/.config/direnv/direnvrc
+.PHONY: link_direnvrc
+
 install_plug:
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
