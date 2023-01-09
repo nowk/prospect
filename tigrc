@@ -8,3 +8,9 @@ bind status A !?git commit --amend
 # Thank you! https://github.com/jonas/tig/issues/199
 bind status p !git push origin
 bind status P !git push -f origin
+
+
+# update the hightlight color/cursor line, hard to read on dark themes
+#
+# https://github.com/jonas/tig/issues/495
+color cursor            black   yellow bold
