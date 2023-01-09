@@ -7,3 +7,6 @@ bashrc.env
 bashrc.rds
 
 env
+
+" ignore plug, installed outside of prospect to get latest version
+vim/autoload/plug.vim
