@@ -5,6 +5,7 @@ EXPORTS_DIR=$HOME/.prospect/exports
 # TODO this should just iterate though the exports dir and load all, no more
 # static listing them
 [[ -f $EXPORTS_DIR/golang ]]  && . $EXPORTS_DIR/golang
+[[ -f $EXPORTS_DIR/node ]]    && . $EXPORTS_DIR/node
 [[ -f $EXPORTS_DIR/local ]]   && . $EXPORTS_DIR/local
 [[ -f $EXPORTS_DIR/env ]]     && . $EXPORTS_DIR/env
 [[ -f $EXPORTS_DIR/display ]] && . $EXPORTS_DIR/display

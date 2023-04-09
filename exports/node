@@ -1,0 +1,4 @@
+# This helps with the OOM issues eslint sometimes encounters. If this causes
+# problems try commenting this out, `direnv allow` ing again and see how that
+# works. This seems to solve issues on the DO box with 4gb of memory.
+NODE_OPTIONS=--max-old-space-size=512
