@@ -77,3 +77,5 @@ Thumbs.db:encryptable
 
 .syncthing*
 *.sync-conflict*
+
+node_modules*
